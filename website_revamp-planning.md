@@ -12,4 +12,11 @@ The site I turned in last term was way below my expectations and I know I'm capa
 
 ### To-Do List
 1. Create style tile (deciding on general color scheme)
-2. Create official wireframes for every page of site in desktop, mobile, and tablet-sized view. (deciding on a legitimate layout)
+2. Create the site navigation bar
+3. Create official wireframes for every page of site in desktop, mobile, and tablet-sized view. (deciding on a legitimate layout)
+
+###  Content Inventory
+#### Project Page
+- JS Project (Basketball Zodiac)
+- UI Design Project (Apple Music Web Player)
+- Photoshop/Illustrator Project (B-Movie Poster) 
