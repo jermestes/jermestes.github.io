@@ -1,43 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/favicon.png"> 
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Jerm Estes</title>
 </head>
 
 <body>
-    <nav id="desktop_navbar">
+    <nav id="navbar">
         <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"></a>
-        <ul class="nav_links">
-            <li><a href="bio.html">Bio</a></li>
+        <ul id="desktop_nav_links" class="toggleOn">
+            <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Work</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resume.html">Resumé</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        
+
         <div class="nav_tophalf"></div>
         <div class="nav_bottomhalf"></div>
-        
+
+        <!--<nav id="mobile_navbar">-->
         <!-- Hamburger menu -->
         <span id="hamburger_menu">
             <div class="burger_bar" id="burger_bar1"></div>
             <div class="burger_bar" id="burger_bar2"></div>
             <div class="burger_bar" id="burger_bar3"></div>
-        </span> 
+        </span>
+
+        <ul id="mobile_nav_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="resume.html">Resumé</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
 
-    <main id="homepage_main">
-        <header id="intro_headline">
-            <h1 id="home_nameplate">JERM ESTES</h1>
-            <h2>WEB DEVELOPER<br>ATHLETE<br>ARTIST</h2>
+    <main>
+        <header id="home_header">
+            <div id="intro_headline">
+                <h1 id="home_nameplate">JERM ESTES</h1>
+                <h2 id="home_waterfall">WEB DEVELOPER<br>ATHLETE<br>ARTIST</h2>
+            </div>
+
+            <picture id="home_hero_pic">
+                <source media="(min-width: 750px)" srcset="images/hero_inverted2.jpg">
+                <source media="(max-width: 750px)" srcset="images/hero_inverted_wide.jpg">
+                <img src="images/hero_inverted_wide.jpg" class="inverted_home_pic">
+            </picture>
         </header>
-        
-        <img src="images/hero_inverted2.jpg" class="inverted_home_pic">
+
+        <section id="homeWhoAmI">
+            <h2>Who Am I?</h2>
+            <p>My name is Jeremy Estes, but most call me Jerm.</p>
+        </section>
+
+        <section id="homeLearnMore">
+            <h2>Learn More</h2>
+            <img src="images/linxjerm2.jpg" />
+
+            <button>Resumé</button>
+            <button>My Work</button>
+            <button>Contact</button>
+        </section>
     </main>
 
     <footer>
@@ -46,5 +75,7 @@
         <p>&copy 2018 Jeremy Estes</p>
     </footer>
 
+    <script src="main.js"></script>
 </body>
+
 </html>

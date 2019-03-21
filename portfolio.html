@@ -10,28 +10,36 @@
     <title>My Work | Jerm Estes</title>
 </head>
 <body>         
-    <nav id="desktop_navbar">
+    <nav id="navbar">
         <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"></a>
-        <ul class="nav_links">
-            <li><a href="bio.html">Bio</a></li>
+        <ul id="desktop_nav_links" class="toggleOn">
+            <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Work</a></li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resume.html">Resumé</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        
+
         <div class="nav_tophalf"></div>
         <div class="nav_bottomhalf"></div>
-        
+
+        <!--<nav id="mobile_navbar">-->
         <!-- Hamburger menu -->
         <span id="hamburger_menu">
             <div class="burger_bar" id="burger_bar1"></div>
             <div class="burger_bar" id="burger_bar2"></div>
             <div class="burger_bar" id="burger_bar3"></div>
-        </span> 
-    </nav>     
+        </span>
+
+        <ul id="mobile_nav_links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Work</a></li>
+            <li><a href="resume.html">Resumé</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>    
 
     <main></main>
 
-    
+    <script src="main.js"></script>
 </body>
 </html>
