@@ -13,8 +13,9 @@
 
 <body>
     <nav id="navbar">
-        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"></a>
-        <ul id="desktop_nav_links" class="toggleOn">
+        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"
+                alt="Jerm Estes logo"></a>
+        <ul id="desktop_nav_links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Work</a></li>
             <li><a href="resume.html">Resumé</a></li>
@@ -24,13 +25,12 @@
         <div class="nav_tophalf"></div>
         <div class="nav_bottomhalf"></div>
 
-        <!--<nav id="mobile_navbar">-->
         <!-- Hamburger menu -->
-        <span id="hamburger_menu">
+        <div id="hamburger_menu">
             <div class="burger_bar" id="burger_bar1"></div>
             <div class="burger_bar" id="burger_bar2"></div>
             <div class="burger_bar" id="burger_bar3"></div>
-        </span>
+        </div>
 
         <ul id="mobile_nav_links">
             <li><a href="index.html">Home</a></li>
@@ -50,29 +50,34 @@
             <picture id="home_hero_pic">
                 <source media="(min-width: 750px)" srcset="images/hero_inverted2.jpg">
                 <source media="(max-width: 750px)" srcset="images/hero_inverted_wide.jpg">
-                <img src="images/hero_inverted_wide.jpg" class="inverted_home_pic">
+                <img src="images/hero_inverted_wide.jpg" class="inverted_home_pic" alt="Jerm - Work and play">
             </picture>
         </header>
 
         <section id="homeWhoAmI">
-            <h2>Who Am I?</h2>
-            <p>My name is Jeremy Estes, but most call me Jerm.</p>
+            <h1>Who Am I?</h1>
+            <p>
+                My name is Jeremy, but most just call me Jerm. I'm a soon-to-be graduate of Drexel University.
+                Web design is my craft. Sports are my passion. And creating digital experiences is what bridges work and
+                play for me.
+            </p>
         </section>
 
         <section id="homeLearnMore">
-            <h2>Learn More</h2>
-            <img src="images/linxjerm2.jpg" />
+            <img src="images/linxjerm2.jpg" alt="Ball in Jerm's court" /><br>
+            <div>
+                <h1>Learn More</h1><br>
+                <a href="resume.html">Resumé</a><br>
+                <a href="portfolio.html">My Work</a><br>
+                <a href="contact.html">Contact</a><br>
+            </div>
 
-            <button>Resumé</button>
-            <button>My Work</button>
-            <button>Contact</button>
+
         </section>
     </main>
 
     <footer>
-        <a href="https://github.com/jermestes"><img src="images/GitHub-Mark-64px.png"></a>
-        <a href="https://www.linkedin.com/in/jeremy-estes/"><img src="images/In-Black-66px-TM.png"></a>
-        <p>&copy 2018 Jeremy Estes</p>
+        <p>© 2018 Jeremy Estes</p>
     </footer>
 
     <script src="main.js"></script>

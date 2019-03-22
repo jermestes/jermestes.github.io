@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="images/favicon.png"> 
+    <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <title>My Work | Jerm Estes</title>
 </head>
-<body>         
+
+<body>
     <nav id="navbar">
-        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"></a>
-        <ul id="desktop_nav_links" class="toggleOn">
+        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"
+                alt="Jerm Estes logo"></a>
+        <ul id="desktop_nav_links">
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Work</a></li>
             <li><a href="resume.html">Resumé</a></li>
@@ -22,13 +25,12 @@
         <div class="nav_tophalf"></div>
         <div class="nav_bottomhalf"></div>
 
-        <!--<nav id="mobile_navbar">-->
         <!-- Hamburger menu -->
-        <span id="hamburger_menu">
+        <div id="hamburger_menu">
             <div class="burger_bar" id="burger_bar1"></div>
             <div class="burger_bar" id="burger_bar2"></div>
             <div class="burger_bar" id="burger_bar3"></div>
-        </span>
+        </div>
 
         <ul id="mobile_nav_links">
             <li><a href="index.html">Home</a></li>
@@ -36,10 +38,78 @@
             <li><a href="resume.html">Resumé</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>    
+    </nav>
 
-    <main></main>
+    <main id="projects_main">
+        <h1 class="resume_title">Work by Jerm</h1>
+        <section class="projects">
+            <a href="idm231/index.html" target="_blank"><img src="images/projects/zodiac.PNG" class="project_images"
+                    alt="custom-zodiac project" /></a>
+            <div>
+                <a href="idm231/index.html" target="_blank">
+                    <h2>NBA Horiscope Machine</h2>
+                </a>
+                <p>For one of my scripting classes, the term project was to create a custom-zodiac web app.
+                    Users can enter their birthday or choose a ball with their zodiac sign and the page will
+                    return a specific player profile for the inputted zodiac.
+                </p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <a href="http://www.cci.drexel.edu/seniordesign/2018_2019/VinylDNS/index.html" target="_blank"><img
+                    src="images/projects/vinyl_logo.png" class="project_images" alt="VinylDNS project" /></a>
+            <div>
+                <a href="http://www.cci.drexel.edu/seniordesign/2018_2019/VinylDNS/index.html" target="_blank">
+                    <h2>VinylDNS</h2>
+                </a>
+                <p>For Drexel’s CCI senior project, myself and a group of 6 other students are helping to
+                    redesign the front-end of Comcast’s open source project Vinyl DNS. VinylDNS is a vendor
+                    agnostic front-end for enabling self-service DNS and streamlining DNS operations.
+                    Note: This project spans the full academic year, and therefore is still in progress.
+                    The final presentation will be in June 2019. You can go to the project website here for
+                    updates.</p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <a href="https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off"><img
+                    src="images/projects/webplayerinterface_placeholder.PNG" class="project_images"
+                    alt="Apple Music Interface Design Project" /></a>
+            <div>
+                <a href="https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off">
+                    <h2>Interface Redesign</h2>
+                </a>
+                <p>For one of my interface design classes, the term project was to redesign the interface of
+                    a website with Adobe XD. I took an alternative route with this project, as my site choice
+                    technically didn’t really redesign an existing website. Instead, I proposed the creation of
+                    an Apple Music webplayer. The goal was to revamp the standard iTunes layout and deliver
+                    the experience of Apple Music’s mobile app. You can play with the prototype </p>
+            </div>
+        </section>
+
+        <section class="projects">
+            <a href="images/projects/BMoviePoster.jpg" target="_blank"><img src="images/projects/BMoviePoster.jpg"
+                    class="project_images" alt="Jerm B movie poster" /></a>
+            <div>
+                <a href="images/projects/BMoviePoster.jpg" target="_blank">
+                    <h2>B Movie Poster</h2>
+                </a>
+                <p>For my digital design tools class, our final assignment was to create a “B Movie” poster
+                    featuring ourselves as the main subject. Using Adobe Illustrator, I created
+                    “The Night of the Living Jerm”, an ode to B horror movies. While this was the final submission
+                    for the course, I still plan on continuing to update this to make it as “cinematic” as possible.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>©copy 2018 Jeremy Estes</p>
+    </footer>
+
 
     <script src="main.js"></script>
 </body>
+
 </html>
