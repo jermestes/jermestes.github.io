@@ -7,15 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/main.css">
     <title>Jerm Estes</title>
 </head>
 
 <body>
     <nav id="navbar">
-        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png"
-                alt="Jerm Estes logo"></a>
-        <ul id="desktop_nav_links">
+        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png" alt="Jerm Estes logo"></a>        
+        <ul id="nav_links">
+            <li id="accordion-button">Menu</li>
             <li><a href="index.html">Home</a></li>
             <li><a href="portfolio.html">Work</a></li>
             <li><a href="resume.html">Resumé</a></li>
@@ -24,20 +24,6 @@
 
         <div class="nav_tophalf"></div>
         <div class="nav_bottomhalf"></div>
-
-        <!-- Hamburger menu -->
-        <div id="hamburger_menu">
-            <div class="burger_bar" id="burger_bar1"></div>
-            <div class="burger_bar" id="burger_bar2"></div>
-            <div class="burger_bar" id="burger_bar3"></div>
-        </div>
-
-        <ul id="mobile_nav_links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Work</a></li>
-            <li><a href="resume.html">Resumé</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
     </nav>
 
     <main>
@@ -54,25 +40,37 @@
             </picture>
         </header>
 
-        <section id="about">
+        <section id="about_section" class="main_sections">
             <h1>About Me</h1>
             <p>
                 My name is Jeremy, but most just call me Jerm. I'm a web developer/designer with an all-around
-                IT background. 
+                IT background. I've recently graduated from college and am available for hire.
             </p>
+        </section>
+
+        <section id="projects_section" class="main_sections">
+            <h1>Projects</h1>
+            <div class="projects"></div>
+            <div class="projects"></div>
+            <div class="projects"></div>
+            <div class="projects"></div>
+
+        </section>
+
+        <section id="contact_section" class="main_sections">
+            <h1>Contact Me</h1>
+            <p>You can send a message using the form below or connect with me on the following platforms:</p>
+            <div class="profile_links-container">
+                <a target ="_blank" href="https://codepen.io/jermestes"><img src="images/profile_icons/codepen/Button-Black-Large.png" alt="" class="profile_links">Codepen</a><br>
+                <a target ="_blank" href="https://dribbble.com/jermestes"><img src="images/profile_icons/dribbble/dribbble-ball-icon.png" alt="" class="profile_links">Dribbble</a><br>
+                <a target ="_blank" href="https://github.com/jermestes"><img src="images/profile_icons/github/Github-Mark/PNG/GitHub-Mark-120px-plus.png" alt="" class="profile_links">Github</a><br>
+                <a target ="_blank" href="https://www.linkedin.com/in/jeremy-estes/"><img src="images/profile_icons/linkedin/iconfinder_linkedin_circle_color_107178.png" alt="" class="profile_links">LinkedIn</a>
+            </div>
         </section>
 
     </main>
 
-    <footer>
-        <div class="profile_links-container"><!-- Put links for Dribbble, Github, and Codepen -->
-            <a target ="_blank" href="https://codepen.io/jermestes"><img src="images/profile_icons/codepen/Button-Black-Large.png" alt="" class="profile_links">Codepen</a><br>
-            <a target ="_blank" href="https://dribbble.com/jermestes"><img src="images/profile_icons/dribbble/dribbble-ball-icon.png" alt="" class="profile_links">Dribbble</a><br>
-            <a target ="_blank" href="https://github.com/jermestes"><img src="images/profile_icons/github/Github-Mark/PNG/GitHub-Mark-120px-plus.png" alt="" class="profile_links">Github</a><br>
-            <a target ="_blank" href="https://www.linkedin.com/in/jeremy-estes/"><img src="images/profile_icons/linkedin/iconfinder_linkedin_circle_color_107178.png" alt="" class="profile_links">LinkedIn</a>
-        </div>
-        <p>© 2019 Jeremy Estes</p>
-    </footer>
+    <footer><p>© 2019 Jeremy Estes</p></footer>
 
     <script src="main.js"></script>
 </body>
