@@ -35,7 +35,32 @@ body {
     }
 }
 
-// The Navigation Bar
+//BODY Part 1 of 3 - The Header, which holds the navbar and header art
+header {
+    display: flex;
+    flex-flow: column wrap;
+    @media screen and (min-width: 750px) {
+        display: grid;
+        grid-column: 1/13;
+        grid-row: 1/2;
+        grid-template-columns: repeat(12,1fr);
+        grid-template-rows: auto auto;
+        margin-bottom: 1.25rem;    
+        #header-art_picture {
+            height: 25rem;
+            grid-column: 7/13;
+            padding-left: 1rem;
+            justify-self: start;
+        }
+    }
+    /* Desktop/Tablet display*/
+    @media screen and (min-width: 900px) {
+        .header-art_picture {
+            grid-column: 7/13;
+        }     
+    }
+}
+// Header Part 1 of 2 - The Nav, which holds the logo and links
 nav {
     background-color: var(--TopNav-grey);  
     text-transform: uppercase;
@@ -101,13 +126,13 @@ nav {
         }
     }
     
-    .nav_tophalf {
+    .nav_top-half {
         grid-column: 1/13;
         grid-row: 1/2;
         z-index: 10;
     }
     
-    .nav_bottomhalf {
+    .nav_bottom-half {
         grid-column: 1/13;
         grid-row: 2/3;
         z-index: 10;
@@ -146,7 +171,7 @@ li a:hover {
     cursor: pointer;
 }
 
-/* MAIN */
+// BODY Part 2 of 3 - The Main, which holds a Portfolio and Contact section
 main {
     grid-row: 2/3;
     grid-column: 1/13;
@@ -160,16 +185,11 @@ main {
     }
     .main_sections {
         border-top: .125rem solid var(--TopNav-grey);
-    }
-
-    #about_section {
         display: block;
         width: 100%;
         margin-top: 2rem;
         padding: 2rem 0;
     }
-
-
 }
 
 h6,h5,h4,h3,h2,h1{
@@ -177,7 +197,7 @@ h6,h5,h4,h3,h2,h1{
     margin: 0;
 }
 
-.inverted_home_pic {
+.header-art_picture_img {
     width: 100%;
     @media screen and (min-width: 750px) {
         width: 22.5rem;
@@ -194,12 +214,12 @@ h2 {
     padding-left: 0.7rem;
 }
 
-#home_nameplate {
+#header-art_textbox_nameplate {
     background-color: var(--pink);
     font-weight: bold;
 }
 
-#home_waterfall {
+#header-art_textbox_waterfall {
     text-align: center;
     font-weight: lighter;
     display: block;
@@ -208,7 +228,7 @@ h2 {
     }
 }
 
-#intro_headline {
+#header-art_textbox {
     text-align: center;
     @media screen and (min-width: 750px) {
         display: block;
@@ -250,41 +270,28 @@ footer {
     }
 }
 
+.profile_links-container a{
+    font-family: 'Roboto', sans-serif;
+}
+
 .profile_links {
     width: 2rem;
     height: 2rem;
 }
+
+
 
 p {
     margin: 0;
     max-width: 60rem;
 }
 
-header {
-    display: flex;
-    flex-flow: column-reverse wrap;
+#header-art {
     @media screen and (min-width: 750px) {
-        display: grid;
         grid-column: 1/13;
-        grid-row: 1/2;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: auto;
-        margin-bottom: 1.25rem;
+        grid-row: 2/3;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;       
     }
-}
-
-@media screen and (min-width: 750px) {        
-    #home_hero_pic {
-        height: 25rem;
-        grid-column: 7/13;
-        padding-left: 1rem;
-        justify-self: start;
-    }
-}
-
-/* Desktop/Tablet display*/
-@media screen and (min-width: 900px) {
-    .home_hero_pic {
-        grid-column: 7/13;
-    }     
 }

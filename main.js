@@ -1,5 +1,5 @@
 //toggle function for nav bar
-const hamburger = document.getElementById('hamburger_menu');
+/*const hamburger = document.getElementById('hamburger_menu');
 const navLinks = document.getElementById('mobile_nav_links');
 
 function toggle(){
@@ -16,4 +16,8 @@ function toggle(){
     }
 }
 
-hamburger.addEventListener('click',toggle,false);
+hamburger.addEventListener('click',toggle,false);*/
+
+function introScroll(target, duration) {
+    var target = document
+}

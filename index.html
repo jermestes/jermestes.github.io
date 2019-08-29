@@ -12,67 +12,77 @@
 </head>
 
 <body>
-    <nav id="navbar">
-        <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png" alt="Jerm Estes logo"></a>        
-        <div id="accordion-button"><h4>Menu</h4></div>
-        <ul id="nav_links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Work</a></li>
-            <li><a href="resume.html">Resumé</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+    <!-- Start of page -->
+    <!-- Header -->
+    <header>
+        <!-- The nav bar-->
+        <nav>
+            <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png" alt="Jerm Estes logo"></a>        
+            <div id="accordion-button"><h4>Menu</h4></div>
+            <ul id="nav_links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="resume.html">Resumé</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        
+            <!-- The top and bottom halves of the nav bar -->
+            <div class="nav_top-half"></div>
+            <div class="nav_bottom-half"></div>
+        </nav>
 
-        <div class="nav_tophalf"></div>
-        <div class="nav_bottomhalf"></div>
-    </nav>
-
-    <main>
-        <header id="home_header">
-            <div id="intro_headline">
-                <h1 id="home_nameplate">JERM ESTES</h1>
-                <h2 id="home_waterfall">WEB DEVELOPER<br>ATHLETE<br>ARTIST</h2>
+        <div id="header-art"> 
+            <div id="header-art_textbox">
+                <h1 id="header-art_textbox_nameplate">JERM ESTES</h1>
+                <h2 id="header-art_textbox_waterfall">WEB DEVELOPER<br>ATHLETE<br>ARTIST</h2>
+                <div id="header-art_chevron"></div>
             </div>
 
-            <picture id="home_hero_pic">
+            <picture id="header-art_picture">
                 <source media="(min-width: 750px)" srcset="images/hero_inverted2.jpg">
                 <source media="(max-width: 750px)" srcset="images/hero_inverted_wide.jpg">
-                <img src="images/hero_inverted_wide.jpg" class="inverted_home_pic" alt="Jerm - Work and play">
+                <img src="images/hero_inverted_wide.jpg" class="header-art_picture_img" alt="Jerm dribbling while coding">
             </picture>
-        </header>
-
-        <section id="about_section" class="main_sections">
-            <h1>Me and My Work</h1>
+        </div>
+    </header>
+    
+    <main>
+        <!-- The About Me/Project section-->
+        <section id="projects_section" class="main_sections">
+            <h1>My Work</h1>
             <p>
                 My name is Jeremy, but most just call me Jerm. I'm a web developer/designer with an all-around
-                IT background. I've recently graduated from college and am available for hire.
+                IT background. I've recently graduated from college and am available for hire. Here is some of
+                my work:
             </p>
+            <div class="projects">
+                <!-- inside the project portal is an image, description, 
+                    and buttons to view live project and code (if applicable)-->
+            </div>
         </section>
 
-        <section id="projects_section" class="main_sections">
-            <h1>Projects</h1>
-            <div class="projects"></div>
-            <div class="projects"></div>
-            <div class="projects"></div>
-            <div class="projects"></div>
-
-        </section>
-
+        <!-- The Contact Me section -->
         <section id="contact_section" class="main_sections">
             <h1>Contact Me</h1>
+            <!-- Fool-proof instructions for the user -->
             <p>You can send a message using the form below or connect with me on the following platforms:</p>
+            <!-- A container for links to my professional profiles (Codepen, Dribbble, Github, and LinkedIn -->
             <div class="profile_links-container">
                 <a target ="_blank" href="https://codepen.io/jermestes"><img src="images/profile_icons/codepen/Button-Black-Large.png" alt="" class="profile_links">Codepen</a><br>
                 <a target ="_blank" href="https://dribbble.com/jermestes"><img src="images/profile_icons/dribbble/dribbble-ball-icon.png" alt="" class="profile_links">Dribbble</a><br>
                 <a target ="_blank" href="https://github.com/jermestes"><img src="images/profile_icons/github/Github-Mark/PNG/GitHub-Mark-120px-plus.png" alt="" class="profile_links">Github</a><br>
                 <a target ="_blank" href="https://www.linkedin.com/in/jeremy-estes/"><img src="images/profile_icons/linkedin/iconfinder_linkedin_circle_color_107178.png" alt="" class="profile_links">LinkedIn</a>
             </div>
-        </section>
 
+            <!-- Contact form to send a direct message -->
+            <form></form>
+        </section>
     </main>
 
+    <!-- End of page -->
     <footer><p>© 2019 Jeremy Estes</p></footer>
 
+    <!-- Loading in the JavaScript -->
     <script src="main.js"></script>
 </body>
-
 </html>
