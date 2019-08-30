@@ -16,9 +16,6 @@
 
 html {
   font-size: 100%;
-  --pink: #E4C8C4;
-  --blue: #75C4DB;
-  --TopNav-grey: #EEEEEE;
 }
 
 body {
@@ -36,6 +33,7 @@ body {
         grid-template-columns: repeat(12, 1fr);
     -ms-grid-rows: auto auto auto;
         grid-template-rows: auto auto auto;
+        grid-template-areas: 'header header header header header header header header header header header header '    '. main main main main main main main main main main .'     'footer footer footer footer footer footer footer footer footer footer footer footer';
   }
 }
 
@@ -52,14 +50,9 @@ header {
 
 @media screen and (min-width: 750px) {
   header {
+    grid-area: header;
     display: -ms-grid;
     display: grid;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-column: 1/13;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
     -ms-grid-columns: (1fr)[12];
         grid-template-columns: repeat(12, 1fr);
     -ms-grid-rows: auto auto;
@@ -86,7 +79,7 @@ header {
 }
 
 nav {
-  background-color: var(--TopNav-grey);
+  background-color: #EEEEEE;
   text-transform: uppercase;
   display: -ms-grid;
   display: grid;
@@ -229,7 +222,7 @@ nav #accordion-button {
   display: block;
   width: 100%;
   height: auto;
-  background-color: var(--blue);
+  background-color: #75C4DB;
   text-align: center;
 }
 
@@ -250,20 +243,15 @@ li a {
 }
 
 li a:hover {
-  color: var(--blue);
-  border-bottom: 0.25rem solid var(--blue);
+  color: #75C4DB;
+  border-bottom: 0.25rem solid #75C4DB;
   -webkit-transition: border 150ms linear;
   transition: border 150ms linear;
   cursor: pointer;
 }
 
 main {
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
+  grid-area: main;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,7 +273,7 @@ main p {
 }
 
 main .main_sections {
-  border-top: 0.125rem solid var(--TopNav-grey);
+  border-top: 0.125rem solid #EEEEEE;
   display: block;
   width: 100%;
   margin-top: 2rem;
@@ -318,8 +306,16 @@ h2 {
 }
 
 #header-art_textbox_nameplate {
-  background-color: var(--pink);
+  background-color: #E4C8C4;
   font-weight: bold;
+}
+
+#projects_h1 {
+  background-color: #ffeba8;
+}
+
+#contact_h1 {
+  background-color: #a8ffb7;
 }
 
 #header-art_textbox_waterfall {
@@ -372,14 +368,9 @@ button, input[type=submit] {
 
 footer {
   font-family: 'Chakra Petch', sans-serif;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 12;
-  grid-column: 1/13;
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 1;
-  grid-row: 3/4;
+  grid-area: footer;
   color: black;
-  background-color: var(--TopNav-grey);
+  background-color: #EEEEEE;
   text-align: center;
 }
 
@@ -420,5 +411,18 @@ p {
         -ms-flex-pack: center;
             justify-content: center;
   }
+}
+
+#header-art_chevron {
+  font-size: 10rem;
+  color: #7b7879;
+  content: '';
+  display: inline-block;
+  height: 2.25rem;
+  position: relative;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  width: 2.25rem;
+  text-align: right;
 }
 /*# sourceMappingURL=main.css.map */
