@@ -18,6 +18,9 @@ html {
   font-size: 100%;
 }
 
+/*General variables*/
+/*Variables for page positioning mainly for the header-art, where pic & text overlap on mobile 
+then go back to normal on desktop*/
 body {
   font-family: 'Roboto', sans-serif;
   background-color: white;
@@ -45,21 +48,24 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  /* Desktop/Tablet display*/
 }
 
 @media screen and (min-width: 750px) {
   header {
     grid-area: header;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
-    -ms-grid-rows: auto auto;
-        grid-template-rows: auto auto;
     margin-bottom: 1.25rem;
   }
-  header #header-art_picture {
+}
+
+#header-art_picture {
+  position: absolute;
+  top: 7.5rem;
+  z-index: 20;
+}
+
+@media screen and (min-width: 750px) {
+  #header-art_picture {
+    position: static;
     height: 25rem;
     -ms-grid-column: 7;
     -ms-grid-column-span: 6;
@@ -71,7 +77,7 @@ header {
 }
 
 @media screen and (min-width: 900px) {
-  header .header-art_picture {
+  #header-art_picture {
     -ms-grid-column: 7;
     -ms-grid-column-span: 6;
     grid-column: 7/13;
@@ -266,6 +272,14 @@ main {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  position: relative;
+  top: 7.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  main {
+    position: static;
+  }
 }
 
 main p {
@@ -287,11 +301,13 @@ h6, h5, h4, h3, h2, h1 {
 
 .header-art_picture_img {
   width: 100%;
+  opacity: .5;
 }
 
 @media screen and (min-width: 750px) {
   .header-art_picture_img {
     width: 22.5rem;
+    opacity: 1;
   }
 }
 
@@ -332,6 +348,11 @@ h2 {
 
 #header-art_textbox {
   text-align: center;
+  z-index: 30;
+  position: relative;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 @media screen and (min-width: 750px) {
@@ -345,6 +366,9 @@ h2 {
     line-height: 3rem;
     padding-right: 1rem;
     text-align: right;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
   }
 }
 
@@ -372,6 +396,14 @@ footer {
   color: black;
   background-color: #EEEEEE;
   text-align: center;
+  position: relative;
+  top: 7.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  footer {
+    position: static;
+  }
 }
 
 footer p {
@@ -380,11 +412,30 @@ footer p {
 
 .profile_links-container a {
   font-family: 'Roboto', sans-serif;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .profile_links {
-  width: 2rem;
-  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_links a:visited {
+  color: black;
+}
+
+.profile_links_images {
+  width: 4rem;
+  height: 4rem;
 }
 
 p {
@@ -424,5 +475,25 @@ p {
           transform: rotate(90deg);
   width: 2.25rem;
   text-align: right;
+}
+
+#contact_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
 }
 /*# sourceMappingURL=main.css.map */

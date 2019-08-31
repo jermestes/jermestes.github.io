@@ -19,11 +19,8 @@ html {
     font-size: 100%;
 }
 
-@mixin full_width_grid {
-    display: grid;
-    grid-template: auto / repeat(12,1fr);
-}
-
+/*General variables*/
+//Main colors
 $pink: #E4C8C4;
 $blue: #75C4DB;
 $yellow:#ffeba8;
@@ -31,7 +28,24 @@ $green: #a8ffb7;
 $TopNav-grey: #EEEEEE;
 $Logo-grey: #7b7879;
 
+/*Variables for page positioning mainly for the header-art, where pic & text overlap on mobile 
+then go back to normal on desktop*/
 
+//The combined height of the nav bar (top and bottom halves behind logo)
+$nav-size: 7.5rem;
+
+@mixin full_width_grid {
+    display: grid;
+    grid-template: auto / repeat(12,1fr);
+}
+
+@mixin mobile-reposition {
+    position: relative;
+    top: $nav-size;
+    @media screen and (min-width: 750px) {
+        position: static;
+    }
+}
 
 // The basic structure for the page(s)
 body {
@@ -56,24 +70,26 @@ header {
     flex-flow: column wrap;
     @media screen and (min-width: 750px) {
         grid-area: header;
-        display: grid;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: auto auto;
         margin-bottom: 1.25rem;    
-        #header-art_picture {
-            height: 25rem;
-            grid-column: 7/13;
-            padding-left: 1rem;
-            justify-self: start;
-        }
-    }
-    /* Desktop/Tablet display*/
-    @media screen and (min-width: 900px) {
-        .header-art_picture {
-            grid-column: 7/13;
-        }     
     }
 }
+
+#header-art_picture {
+    position: absolute;
+    top: 7.5rem;
+    z-index: 20;
+    @media screen and (min-width: 750px) {
+        position: static;
+        height: 25rem;
+        grid-column: 7/13;
+        padding-left: 1rem;
+        justify-self: start;
+    }
+    @media screen and (min-width: 900px) {
+        grid-column: 7/13; 
+    }
+}
+
 // Header Part 1 of 2 - The Nav, which holds the logo and links
 nav {
     background-color: $TopNav-grey;  
@@ -193,6 +209,7 @@ main {
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
+    @include mobile-reposition();
     p {
         font-size: 1.25rem;
     }
@@ -212,8 +229,10 @@ h6,h5,h4,h3,h2,h1{
 
 .header-art_picture_img {
     width: 100%;
+    opacity: .5;
     @media screen and (min-width: 750px) {
         width: 22.5rem;
+        opacity: 1;
     }
 }
 
@@ -251,6 +270,9 @@ h2 {
 
 #header-art_textbox {
     text-align: center;
+    z-index: 30;
+    position: relative;
+    align-self: center;
     @media screen and (min-width: 750px) {
         display: block;
         grid-column: 1/7;
@@ -258,6 +280,7 @@ h2 {
         line-height: 3rem;
         padding-right: 1rem;
         text-align: right;
+        align-self: start;
     }
 }
 
@@ -285,6 +308,7 @@ footer {
     color: black;
     background-color: $TopNav-grey;
     text-align: center;
+    @include mobile-reposition();
     p {
         max-width: 100%;
     }
@@ -292,11 +316,23 @@ footer {
 
 .profile_links-container a{
     font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 1.5rem;
+
 }
 
 .profile_links {
-    width: 2rem;
-    height: 2rem;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    a:visited {
+        color: black;
+    }
+}
+
+.profile_links_images {
+    width: 4rem;
+    height: 4rem;
 }
 
 
@@ -326,4 +362,14 @@ p {
 	transform: rotate(90deg);
     width: 2.25rem;
     text-align: right;
+}
+
+#contact_section {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
 }

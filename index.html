@@ -18,7 +18,7 @@
         <!-- The nav bar-->
         <nav>
             <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png" alt="Jerm Estes logo"></a>        
-            <div id="accordion-button"><h4>Menu</h4></div>
+            <!--<button id="accordion-button"><h4>Menu</h4></button>-->
             <ul id="nav_links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#projects_section">Work</a></li>
@@ -63,19 +63,32 @@
 
         <!-- The Contact Me section -->
         <section id="contact_section" class="main_sections">
-            <h1 id="contact_h1">Contact Me</h1>
-            <!-- Fool-proof instructions for the user -->
-            <p>You can send a message using the form below or connect with me on the following platforms:</p>
             <!-- A container for links to my professional profiles (Codepen, Dribbble, Github, and LinkedIn -->
             <div class="profile_links-container">
-                <a target ="_blank" href="https://codepen.io/jermestes"><img src="images/profile_icons/codepen/Button-Black-Large.png" alt="" class="profile_links">Codepen</a><br>
-                <a target ="_blank" href="https://dribbble.com/jermestes"><img src="images/profile_icons/dribbble/dribbble-ball-icon.png" alt="" class="profile_links">Dribbble</a><br>
-                <a target ="_blank" href="https://github.com/jermestes"><img src="images/profile_icons/github/Github-Mark/PNG/GitHub-Mark-120px-plus.png" alt="" class="profile_links">Github</a><br>
-                <a target ="_blank" href="https://www.linkedin.com/in/jeremy-estes/"><img src="images/profile_icons/linkedin/iconfinder_linkedin_circle_color_107178.png" alt="" class="profile_links">LinkedIn</a>
+                <h1 id="contact_h1">Contact Me</h1>
+                <!-- Fool-proof instructions for the user -->
+                <p>You can send a message using the form below or connect with me on the following platforms:</p>
+                <a target ="_blank" href="https://codepen.io/jermestes" class="profile_links">
+                    <img src="images/profile_icons/codepen/Button-Black-Large.png" alt="" class="profile_links_images">Codepen
+                </a><br>
+                <a target ="_blank" href="https://dribbble.com/jermestes" class="profile_links">
+                    <img src="images/profile_icons/dribbble/dribbble-ball-icon.png" alt="" class="profile_links_images">Dribbble
+                </a><br>
+                <a target ="_blank" href="https://github.com/jermestes" class="profile_links">
+                    <img src="images/profile_icons/github/Github-Mark/PNG/GitHub-Mark-120px-plus.png" alt="" class="profile_links_images">Github
+                </a><br>
+                <a target ="_blank" href="https://www.linkedin.com/in/jeremy-estes/" class="profile_links">
+                    <img src="images/profile_icons/linkedin/iconfinder_linkedin_circle_color_107178.png" alt="" class="profile_links_images">LinkedIn
+                </a>
             </div>
 
             <!-- Contact form to send a direct message -->
-            <form></form>
+            <form action="send.php" method="POST">
+                <input name="sender-name" type="text" placeholder="Name">
+                <input name="sender-email" type="email" placeholder="Email">
+                <textarea name="sender-message" placeholder="Your message"></textarea>
+                <button type="submit">Send</button>
+            </form>
         </section>
     </main>
 
