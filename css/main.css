@@ -1,4 +1,3 @@
-/* Loading fonts */
 @font-face {
   font-family: 'Chakra Petch';
   src: url("../fonts/Chakra_Petch/ChakraPetch-Regular.ttf") format(woff);
@@ -18,9 +17,11 @@ html {
   font-size: 100%;
 }
 
-/*General variables*/
-/*Variables for page positioning mainly for the header-art, where pic & text overlap on mobile 
-then go back to normal on desktop*/
+p {
+  margin: 0;
+  max-width: 60rem;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: white;
@@ -28,16 +29,23 @@ body {
   display: block;
 }
 
-@media screen and (min-width: 750px) {
-  body {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
-    -ms-grid-rows: auto auto auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas: 'header header header header header header header header header header header header '    '. main main main main main main main main main main .'     'footer footer footer footer footer footer footer footer footer footer footer footer';
-  }
+h6, h5, h4, h3, h2, h1 {
+  font-family: 'Chakra Petch', sans-serif;
+  margin: 0;
+}
+
+h1 {
+  display: inline-block;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+
+ul {
+  list-style: none;
 }
 
 header {
@@ -48,39 +56,12 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
+  border-bottom: 0.125rem solid #EEEEEE;
 }
 
 @media screen and (min-width: 750px) {
   header {
-    grid-area: header;
     margin-bottom: 1.25rem;
-  }
-}
-
-#header-art_picture {
-  position: absolute;
-  top: 7.5rem;
-  z-index: 20;
-}
-
-@media screen and (min-width: 750px) {
-  #header-art_picture {
-    position: static;
-    height: 25rem;
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 6;
-    grid-column: 7/13;
-    padding-left: 1rem;
-    -ms-grid-column-align: start;
-        justify-self: start;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  #header-art_picture {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 6;
-    grid-column: 7/13;
   }
 }
 
@@ -96,23 +77,17 @@ nav {
   /* The site logo that sits in the nav*/
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 750px) and (min-width: 750px) {
   nav {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 12;
-    grid-column: 1/13;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 3.75rem;
     -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
-    -ms-grid-rows: 3.75rem 3.75rem;
-        grid-template-rows: 3.75rem 3.75rem;
+        grid-template: 3.75rem/repeat(12, 1fr);
   }
 }
 
 nav ul {
-  list-style: none;
   text-transform: uppercase;
 }
 
@@ -120,31 +95,21 @@ nav #nav_links {
   display: none;
 }
 
-@media screen and (min-width: 750px) {
-  nav #nav_links {
-    -ms-grid-column: 4;
-    -ms-grid-column-span: 8;
-    grid-column: 4/12;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    display: -ms-grid;
-    display: grid;
-    justify-items: start;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: end;
-    margin: 0;
-    padding: 0;
-    z-index: 20;
-    -ms-grid-columns: 2fr 2fr 2fr 2fr;
-        grid-template-columns: 2fr 2fr 2fr 2fr;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
-  }
+nav #nav_links li a, nav #nav_links li a:visited {
+  font-weight: bolder;
+  color: #747272;
+  font-family: 'Chakra Petch', sans-serif;
 }
 
-@media screen and (min-width: 900px) {
+nav #nav_links li a:hover {
+  color: #75C4DB;
+  border-bottom: 0.25rem solid #75C4DB;
+  -webkit-transition: border 150ms linear;
+  transition: border 150ms linear;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 750px) {
   nav #nav_links {
     -ms-grid-column: 4;
     -ms-grid-column-span: 8;
@@ -238,26 +203,31 @@ nav #accordion-button {
   }
 }
 
-a, a:visited {
+#header-art_picture {
+  position: absolute;
+  top: 7.5rem;
+  z-index: 20;
+}
+
+@media screen and (min-width: 750px) {
+  #header-art_picture {
+    position: static;
+    height: 25rem;
+    -ms-grid-column: 7;
+    -ms-grid-column-span: 6;
+    grid-column: 7/13;
+    padding-left: 1rem;
+    -ms-grid-column-align: start;
+        justify-self: start;
+  }
+}
+
+li, a, a:visited {
   text-decoration: none;
-  font-family: 'Chakra Petch', sans-serif;
-}
-
-li a {
-  font-weight: bolder;
-  color: #747272;
-}
-
-li a:hover {
-  color: #75C4DB;
-  border-bottom: 0.25rem solid #75C4DB;
-  -webkit-transition: border 150ms linear;
-  transition: border 150ms linear;
-  cursor: pointer;
+  color: black;
 }
 
 main {
-  grid-area: main;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -282,21 +252,33 @@ main {
   }
 }
 
+@media screen and (min-width: 750px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+    -ms-grid-columns: (1fr)[12];
+        grid-template: auto/repeat(12, 1fr);
+  }
+}
+
 main p {
   font-size: 1.25rem;
 }
 
 main .main_sections {
-  border-top: 0.125rem solid #EEEEEE;
   display: block;
   width: 100%;
   margin-top: 2rem;
   padding: 2rem 0;
 }
 
-h6, h5, h4, h3, h2, h1 {
-  font-family: 'Chakra Petch', sans-serif;
-  margin: 0;
+@media screen and (min-width: 750px) {
+  main .main_sections {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 10;
+    grid-column: 2/12;
+  }
 }
 
 .header-art_picture_img {
@@ -309,16 +291,6 @@ h6, h5, h4, h3, h2, h1 {
     width: 22.5rem;
     opacity: 1;
   }
-}
-
-h1 {
-  display: inline-block;
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  padding-left: 0.7rem;
 }
 
 #header-art_textbox_nameplate {
@@ -336,7 +308,6 @@ h2 {
 
 #header-art_textbox_waterfall {
   text-align: center;
-  font-weight: lighter;
   display: block;
 }
 
@@ -347,6 +318,7 @@ h2 {
 }
 
 #header-art_textbox {
+  text-transform: uppercase;
   text-align: center;
   z-index: 30;
   position: relative;
@@ -390,30 +362,32 @@ button, input[type=submit] {
   text-transform: uppercase;
 }
 
-footer {
-  font-family: 'Chakra Petch', sans-serif;
-  grid-area: footer;
-  color: black;
-  background-color: #EEEEEE;
-  text-align: center;
-  position: relative;
-  top: 7.5rem;
+.profile_links-container {
+  padding: 1rem;
 }
 
 @media screen and (min-width: 750px) {
-  footer {
-    position: static;
+  .profile_links-container {
+    padding: 2rem 0 0 4rem;
   }
 }
 
-footer p {
-  max-width: 100%;
+.profile_links-container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  padding: 0;
 }
 
 .profile_links-container a {
   font-family: 'Roboto', sans-serif;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  padding: 1rem 0;
 }
 
 .profile_links {
@@ -422,14 +396,19 @@ footer p {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row;
-          flex-flow: row;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-right: 3rem;
 }
 
-.profile_links a:visited {
+.profile_links img {
+  margin-right: .5rem;
+}
+
+.profile_links :visited {
   color: black;
 }
 
@@ -438,9 +417,8 @@ footer p {
   height: 4rem;
 }
 
-p {
-  margin: 0;
-  max-width: 60rem;
+#header-art {
+  padding: 1rem 0 2rem 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -477,14 +455,22 @@ p {
   text-align: right;
 }
 
-#contact_section {
+#contact_content-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+@media screen and (max-width: 750px) {
+  #contact_content-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 form {
@@ -495,5 +481,42 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
           flex-flow: column wrap;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 750px) {
+  form {
+    text-align: left;
+    padding: 2rem 4rem 0 0;
+  }
+}
+
+form > * {
+  margin-bottom: 2rem;
+  border-width: 0 0 .1rem 0;
+}
+
+form textarea {
+  height: 10rem;
+}
+
+footer {
+  font-family: 'Chakra Petch', sans-serif;
+  color: black;
+  background-color: #EEEEEE;
+  text-align: center;
+  position: relative;
+  top: 7.5rem;
+}
+
+@media screen and (min-width: 750px) {
+  footer {
+    position: static;
+  }
+}
+
+footer p {
+  max-width: 100%;
 }
 /*# sourceMappingURL=main.css.map */

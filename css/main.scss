@@ -1,4 +1,4 @@
-/* Loading fonts */
+// Loading fonts 
 @font-face {
     font-family: 'Chakra Petch';
     src: /*url('fonts/Chakra_Petch.woff2') format(woff2),*/
@@ -11,6 +11,7 @@
     url('../fonts/Roboto/Roboto-Regular.ttf') format(woff);     
 }
 
+// Generic styling
 * {
     box-sizing: border-box;
 }
@@ -19,8 +20,13 @@ html {
     font-size: 100%;
 }
 
-/*General variables*/
-//Main colors
+p {
+    margin: 0;
+    max-width: 60rem;
+}
+
+//General variables
+//main colors
 $pink: #E4C8C4;
 $blue: #75C4DB;
 $yellow:#ffeba8;
@@ -28,104 +34,98 @@ $green: #a8ffb7;
 $TopNav-grey: #EEEEEE;
 $Logo-grey: #7b7879;
 
-/*Variables for page positioning mainly for the header-art, where pic & text overlap on mobile 
-then go back to normal on desktop*/
-
-//The combined height of the nav bar (top and bottom halves behind logo)
+//Page layout variables
+//combined height of the nav bar (top and bottom halves behind logo)
 $nav-size: 7.5rem;
 
-@mixin full_width_grid {
-    display: grid;
-    grid-template: auto / repeat(12,1fr);
+//default mobile>tablet>desktop breakpoints
+$screen-breakpoint1: 750px;
+
+//for setting the columns/alignment of nav and main sections
+@mixin full_width_grid($rowheights) {
+    @media screen and (min-width: $screen-breakpoint1){
+        display: grid;
+        grid-template: $rowheights / repeat(12,1fr);
+    }
 }
 
+//to make sure the main & footer stay in place while header-art pic overlaps text at top
 @mixin mobile-reposition {
     position: relative;
     top: $nav-size;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $screen-breakpoint1) {
         position: static;
     }
 }
 
-// The basic structure for the page(s)
+//The basic structure for the page(s)
 body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
     line-height: 3rem;
     display: block;
-    @media screen and (min-width: 750px) {
-        display: grid;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: auto auto auto; 
-        grid-template-areas: 
-        'header header header header header header header header header header header header '   
-        '. main main main main main main main main main main .'    
-        'footer footer footer footer footer footer footer footer footer footer footer footer';
-    }
+}
+
+h6,h5,h4,h3,h2,h1{
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
+ul {
+    list-style: none;
 }
 
 //BODY Part 1 of 3 - The Header, which holds the navbar and header art
 header {
     display: flex;
     flex-flow: column wrap;
-    @media screen and (min-width: 750px) {
-        grid-area: header;
+    border-bottom: .125rem solid $TopNav-grey;
+    @media screen and (min-width: $screen-breakpoint1) {
         margin-bottom: 1.25rem;    
     }
 }
 
-#header-art_picture {
-    position: absolute;
-    top: 7.5rem;
-    z-index: 20;
-    @media screen and (min-width: 750px) {
-        position: static;
-        height: 25rem;
-        grid-column: 7/13;
-        padding-left: 1rem;
-        justify-self: start;
-    }
-    @media screen and (min-width: 900px) {
-        grid-column: 7/13; 
-    }
-}
-
-// Header Part 1 of 2 - The Nav, which holds the logo and links
 nav {
     background-color: $TopNav-grey;  
     text-transform: uppercase;
     display: grid;
     grid-template-rows: 3.75rem 3.75rem;  
     grid-template-columns: 1fr 1fr 1fr;
-    @media screen and (min-width: 750px) {
-        grid-column: 1/13;
-        grid-row: 1/2;
-        grid-template-columns: repeat(12,1fr);
-        grid-template-rows: 3.75rem 3.75rem;   
+    @media screen and (min-width: $screen-breakpoint1) {
+        @include full_width_grid(3.75rem);   
     }
 
     // Get rid of the bullet points and put links in all-uppercase*/
     ul {
-        list-style: none;
         text-transform: uppercase;
     }
 
     // The links for different sections of the page/site 
     #nav_links {
         display: none;
-        @media screen and (min-width: 750px){
-            grid-column: 4/12;
-            grid-row: 1/2;
-            display: grid;
-            justify-items: start;
-            align-items: end;
-            margin: 0;
-            padding: 0;
-            z-index: 20;
-            grid-template-columns: 2fr 2fr 2fr 2fr;
-            grid-template-rows: auto;
+        li a, li a:visited {
+            font-weight: bolder;  
+            color: #747272;
+            font-family: 'Chakra Petch', sans-serif;  
         }
-        @media screen and (min-width: 900px) {
+
+        li a:hover {
+            color: $blue;
+            border-bottom: .25rem solid $blue;
+            transition: border 150ms linear;
+            cursor: pointer;
+        }
+        @media screen and (min-width: $screen-breakpoint1){
             grid-column: 4/12;
             grid-row: 1/2;
             display: grid;
@@ -149,7 +149,7 @@ nav {
         grid-row: 1/3;
         justify-self: center;
         align-self: center;
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $screen-breakpoint1) {
             grid-column: 1/4;
             grid-row: 1/3;
             z-index: 20;
@@ -166,7 +166,7 @@ nav {
         grid-column: 1/13;
         grid-row: 2/3;
         z-index: 10;
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $screen-breakpoint1) {
             background-color: white;
         }
     }
@@ -178,72 +178,64 @@ nav {
         height: auto;
         background-color: $blue;
         text-align: center;
-        @media screen and (min-width: 750px) {
+        @media screen and (min-width: $screen-breakpoint1) {
             display: none;
         }
     }
 }
 
-a, a:visited {
+#header-art_picture {
+    position: absolute;
+    top: 7.5rem;
+    z-index: 20;
+    @media screen and (min-width: $screen-breakpoint1) {
+        position: static;
+        height: 25rem;
+        grid-column: 7/13;
+        padding-left: 1rem;
+        justify-self: start;
+    }
+}
+
+// Header Part 1 of 2 - The Nav, which holds the logo and links
+li, a, a:visited {
     text-decoration: none;
-    font-family: 'Chakra Petch', sans-serif;
+    color: black;
 }
 
-li a {
-    font-weight: bolder;  
-    color: #747272;  
-}
 
-li a:hover {
-    color: $blue;
-    border-bottom: .25rem solid $blue;
-    transition: border 150ms linear;
-    cursor: pointer;
-}
 
 // BODY Part 2 of 3 - The Main, which holds a Portfolio and Contact section
 main {
-    grid-area: main;
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     flex-wrap: wrap;
     @include mobile-reposition();
+    @include full_width_grid(auto);
     p {
         font-size: 1.25rem;
     }
     .main_sections {
-        border-top: .125rem solid $TopNav-grey;
+        //border-top: .125rem solid $TopNav-grey;
         display: block;
         width: 100%;
         margin-top: 2rem;
         padding: 2rem 0;
+        @media screen and (min-width: $screen-breakpoint1) {
+            grid-column: 2/12;
+        }
     }
-}
-
-h6,h5,h4,h3,h2,h1{
-    font-family: 'Chakra Petch', sans-serif;
-    margin: 0;
 }
 
 .header-art_picture_img {
     width: 100%;
     opacity: .5;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $screen-breakpoint1) {
         width: 22.5rem;
         opacity: 1;
     }
-}
-
-h1 {
-    display: inline-block;
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 1.5rem;
-    padding-left: 0.7rem;
 }
 
 #header-art_textbox_nameplate {
@@ -261,19 +253,19 @@ h2 {
 
 #header-art_textbox_waterfall {
     text-align: center;
-    font-weight: lighter;
     display: block;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $screen-breakpoint1) {
         text-align: right;
     }
 }
 
 #header-art_textbox {
+    text-transform: uppercase;
     text-align: center;
     z-index: 30;
     position: relative;
     align-self: center;
-    @media screen and (min-width: 750px) {
+    @media screen and (min-width: $screen-breakpoint1) {
         display: block;
         grid-column: 1/7;
         justify-self: end;
@@ -302,30 +294,36 @@ button, input[type=submit] {
     text-transform: uppercase;
 }
 
-footer {
-    font-family: 'Chakra Petch', sans-serif;
-    grid-area: footer;
-    color: black;
-    background-color: $TopNav-grey;
-    text-align: center;
-    @include mobile-reposition();
-    p {
-        max-width: 100%;
+
+.profile_links-container {
+    padding: 1rem;
+    @media screen and (min-width: $screen-breakpoint1) {
+        padding: 2rem 0 0 4rem;
     }
-}
+    
+    ul {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 0;
 
-.profile_links-container a{
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 1.5rem;
-
+    }
+    a {
+        font-family: 'Roboto', sans-serif;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 1rem 0;
+    }
 }
 
 .profile_links {
     display: flex;
-    flex-flow: row;
+    flex-flow: row nowrap;
     align-items: center;
-    a:visited {
+    margin-right: 3rem;
+    img {
+        margin-right: .5rem;
+    }
+    :visited {
         color: black;
     }
 }
@@ -335,15 +333,9 @@ footer {
     height: 4rem;
 }
 
-
-
-p {
-    margin: 0;
-    max-width: 60rem;
-}
-
 #header-art {
-    @media screen and (min-width: 750px) {
+    padding: 1rem 0 2rem 0;
+    @media screen and (min-width: $screen-breakpoint1) {
         grid-column: 1/13;
         grid-row: 2/3;
         display: flex;
@@ -364,12 +356,40 @@ p {
     text-align: right;
 }
 
-#contact_section {
+#contact_content-container {
+    @media screen and (max-width: $screen-breakpoint1) {
+        justify-content: center;
+    }
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
 }
 
 form {
     display: flex;
     flex-flow: column wrap;
+    padding: 1rem;
+    text-align: center;
+    @media screen and (min-width: $screen-breakpoint1) {
+        text-align: left;
+        padding: 2rem 4rem 0 0; 
+    }
+       
+    >* {
+        margin-bottom: 2rem;
+        border-width: 0 0 .1rem 0;
+    }
+    textarea {
+        height: 10rem;
+    }
+}
+
+footer {
+    font-family: 'Chakra Petch', sans-serif;
+    color: black;
+    background-color: $TopNav-grey;
+    text-align: center;
+    @include mobile-reposition();
+    p {
+        max-width: 100%;
+    }
 }
