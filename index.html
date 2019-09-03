@@ -7,18 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="images/favicon.png">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Jerm Estes</title>
 </head>
 
 <body>
-    <!-- Start of page -->
-    <!-- Header -->
     <header>
         <!-- The nav bar-->
         <nav>
-            <a href="index.html" class="nav_logo"><img class="home_link_pic" src="images/logo.png" alt="Jerm Estes logo"></a>        
-            <!--<button id="accordion-button"><h4>Menu</h4></button>-->
+            <!-- The logo, which serves as homepage link as well-->
+            <a href="index.html" class="nav_logo"><img class="nav_logo-img" src="images/logo.png" alt="Jerm Estes logo"></a>        
+            <!-- The mobile nav button, to view the nav links as dropdown or slideout-->
+            <button id="accordion-button">Menu</button>
+            <!-- The links to the actual page sections-->
             <ul id="nav_links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#projects_section">Work</a></li>
@@ -26,18 +27,22 @@
                 <li><a href="#contact_section">Contact</a></li>
             </ul>
         
-            <!-- The top and bottom halves of the nav bar -->
+            <!-- The top and bottom halves of the nav bar, used to create a split effect in nav background -->
             <div class="nav_top-half"></div>
             <div class="nav_bottom-half"></div>
         </nav>
 
+        <!-- The header-art -->
         <div id="header-art"> 
+            <!-- The textbox with my name and roles in a waterfall formation -->
             <div id="header-art_textbox">
-                <h1 id="header-art_textbox_nameplate">Jerm Estes</h1>
+                <h1 id="header-art_h1">Jerm Estes</h1>
                 <h2 id="header-art_textbox_waterfall">Web developer<br>Designer<br>Creator</h2>
-                <div id="header-art_chevron"></div>
+                <!-- The chevron button to smooth-scroll user to the main content -->
+                <span id="header-art_chevron"></span>
             </div>
 
+            <!-- The picture tag to alter image based on screen size/dimensions -->
             <picture id="header-art_picture">
                 <source media="(min-width: 750px)" srcset="images/hero_inverted2.jpg">
                 <source media="(max-width: 750px)" srcset="images/hero_inverted_wide.jpg">
@@ -50,17 +55,20 @@
         <!-- The About Me/Project section-->
         <section id="projects_section" class="main_sections">
             <h1 id="projects_h1">My Work</h1>
-            <p>
-                My name is Jeremy, but most just call me Jerm. I'm a web developer/designer with an all-around
-                IT background. I've recently graduated from college and am now available for hire. Here is some of
-                my work:
-            </p>
-            <div class="projects">
-                <div class="project_background"><!-- project image as background image --></div>
-                <!-- Slidedeck box generated from javascript -->
-                <h2><!-- project name-->test</h2><br>
-                <h3><!-- project #_/(total number) -->test</h3>
-                <p><!-- Project description -->test</p>
+            <div id="intro" class="main_sub-sections">
+                <h2>Intro</h2>
+                <p>
+                    My name is Jeremy, but most just call me Jerm. I'm a web developer/designer with an all-around
+                    IT background. I've recently graduated from college and am now available for hire. Here is some of
+                    my work:
+                </p>
+            </div>
+            
+            <div class="projects main_sub-sections">
+                <h2>Projects</h2>
+                <!-- Slidedeck box generated from javascript for user to slide through projects -->
+                <!-- project image as background image -->
+                <div class="project_background"></div>
                 <button id="view-project-button">View Live</button>
             </div>
         </section>
@@ -69,15 +77,17 @@
         <section id="contact_section" class="main_sections">
             <h1 id="contact_h1">Contact Me</h1>
             <div id="contact_content-container">
-                <form action="send.php" method="POST">   
+                <div class="form-container main_sub-sections">
                     <h2>Email</h2>
-                    <input name="sender-name" type="text" placeholder="Name">
-                    <input name="sender-email" type="email" placeholder="Email">
-                    <textarea name="sender-message" placeholder="Your message"></textarea>
-                    <button type="submit">Send</button>
-                </form>
+                    <form action="send.php" method="POST" >       
+                        <input name="sender-name" type="text" placeholder="Name">
+                        <input name="sender-email" type="email" placeholder="Email">
+                        <textarea name="sender-message" placeholder="Your message"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
 
-                <div class="profile_links-container">
+                <div class="profile_links-container main_sub-sections">
                     <h2>Other Platforms</h2>
                     <ul>
                         <li>
@@ -105,13 +115,10 @@
                         </li>
                     </ul>
                 </div>
-
-            
             </div>
         </section>
     </main>
 
-    <!-- End of page -->
     <footer><p>© 2019 Jeremy Estes</p></footer>
 
     <!-- Loading in the JavaScript -->
