@@ -1,8 +1,18 @@
 @import '_general.scss';
 
+@keyframes bounce {
+    from {
+        margin-top: 0;
+    }
+    to {
+        margin-top: .5rem;
+    }
+}
+
 //BODY Part 1 of 3 - The Header, which holds the navbar and header art
 header {
     border-bottom: .125rem solid $TopNav-grey;
+    height: 100vh;
     @media screen and (min-width: $screen-breakpoint1) {
         margin-bottom: 1.25rem;    
     }
@@ -46,6 +56,7 @@ nav {
             grid-template-rows: auto;
         }
     }
+}
     
 /* The site logo that sits in the nav*/
 .nav_logo {
@@ -97,6 +108,17 @@ nav {
         display: none;
     }
 }
+
+
+#header-art {
+    padding: 1rem 0 2rem 0;
+    @media screen and (min-width: $screen-breakpoint1) {
+        grid-column: 1/13;
+        grid-row: 2/3;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;       
+    }
 }
 
 //The header art
@@ -144,31 +166,32 @@ nav {
         text-align: right;
         align-self: start;
     }
-}
-
-#header-art {
-    padding: 1rem 0 2rem 0;
-    @media screen and (min-width: $screen-breakpoint1) {
-        grid-column: 1/13;
-        grid-row: 2/3;
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;       
+    button {
+        background-color: transparent;
+        border: none;
+        width: 70px;
+        height: 40px;
     }
 }
 
 #header-art_chevron {
-    font-size: 10rem;
-    color: $Logo-grey;
-	content: '';
-	display: inline-block;
-	height: 2.25rem;
-	position: relative;
-	transform: rotate(90deg);
-    width: 2.25rem;
+    height: 50px;
+    width: 50px;
+    border: solid $Logo-grey;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    transform: rotate(45deg);
     text-align: right;
-    :after {
-        border-width: 0 .25rem .25rem 0;
-        border-color: $TopNav-grey;
-    }
+    animation: bounce 600ms ease-in-out 600ms infinite alternate;
 }
+  
+#header-art_chevron:after {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    content: '';
+    border: solid $Logo-grey;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    text-align: right;
+    }
