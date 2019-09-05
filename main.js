@@ -1,23 +1,14 @@
-//toggle function for nav bar
-/*const hamburger = document.getElementById('hamburger_menu');
-const navLinks = document.getElementById('mobile_nav_links');
+//Smooth scroll function
+//const navLinks = document.querySelectorAll("li a")
+//console.log(navLinks);
 
-function toggle(){
-    if(navLinks.className == 'toggleOn'){
-        navLinks.classList.remove('toggleOn');
-        navLinks.classList.add('toggleOff');
-        hamburger.classList.remove('toggleOn');
-        hamburger.classList.add('toggleOff');
-    } else {
-        navLinks.classList.add('toggleOn');
-        navLinks.classList.remove('toggleOff');
-        hamburger.classList.add('toggleOn');
-        hamburger.classList.remove('toggleOff');
-    }
-}
+const chevronBtn = document.querySelector("#header-art_chevron");
+console.log(chevronBtn);
+chevronBtn.addEventListener("click",smoothScroll);
 
-hamburger.addEventListener('click',toggle,false);*/
-
-function introScroll(target, duration) {
-    var target = document
+function smoothScroll(event) {
+    window.scroll({
+        top: document.querySelector("#projects_section").offsetTop,
+        behavior: "smooth"
+    });
 }
