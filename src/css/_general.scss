@@ -1,0 +1,119 @@
+// Loading fonts 
+@font-face {
+    font-family: 'Chakra Petch';
+    src: /*url('fonts/Chakra_Petch.woff2') format(woff2),*/
+    url('../fonts/Chakra_Petch/ChakraPetch-Regular.ttf') format(woff);     
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:/*url('/fonts/roboto.woff2') format(woff2),*/
+    url('../fonts/Roboto/Roboto-Regular.ttf') format(woff);     
+}
+
+// Generic styling
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    //scroll-behavior: smooth;
+}
+
+p {
+    margin: 0;
+    max-width: 50ch;
+}
+
+//General variables
+//main colors
+$pink: #E4C8C4;
+$blue: #75C4DB;
+$yellow:#ffeba8;
+$green: #a8ffb7;
+$light-grey: #EEEEEE;
+$dark-grey: #7b7879;
+
+//Page layout variables
+//combined height of the nav bar (top and bottom halves behind logo)
+$nav-size: 7.5rem;
+
+//default mobile>tablet>desktop breakpoints
+$screen-breakpoint1: 750px;
+
+//for setting the columns/alignment of nav and main sections
+@mixin full_width_grid($rowheights) {
+    @media screen and (min-width: $screen-breakpoint1){
+        display: grid;
+        grid-template: $rowheights / repeat(12,1fr);
+    }
+}
+
+//for consistent spacing of main sub-section
+@mixin child-padding {
+    @media screen and (min-width: $screen-breakpoint1) {
+        padding: 1rem;
+        h1, h2 {
+            text-align: center;
+        }        
+    }
+    padding-top: 2rem;
+}
+
+//The basic structure for the page(s)
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    line-height: 3rem;
+    display: block;
+}
+
+h6,h5,h4,h3,h2,h1{
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 2.5rem;
+}
+
+#header-art_h1 {
+    background-color: $pink;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+}
+
+// Header Part 1 of 2 - The Nav, which holds the logo and links
+li, a, a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+button, input[type=submit] {
+    background-color: #252525;
+    border: 1px solid white;
+    color: white;
+    width: 20rem;
+    height: 2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+footer {
+    font-family: 'Chakra Petch', sans-serif;
+    color: black;
+    background-color: $light-grey;
+    text-align: center;
+    p {
+        max-width: 100%;
+    }
+}

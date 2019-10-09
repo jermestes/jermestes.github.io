@@ -5,12 +5,10 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
       <div>
         <Nav></Nav>
         <footer>© 2019</footer>
       </div>  
-    </Router>
   );
 }
 
