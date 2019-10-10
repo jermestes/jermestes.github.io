@@ -9,6 +9,11 @@ const Waterfall = styled.div`
     z-index: 30;
     position: relative;
     align-self: center;
+    h1 {
+        background-color: #e4c8c4;
+        display: inline-block;
+        font-size: 2.5rem;
+    }
     @media screen and (min-width: 700px) {
         display: block;
         grid-column: 1/7;
@@ -17,12 +22,6 @@ const Waterfall = styled.div`
         padding-right: 1rem;
         text-align: right;
         align-self: start;
-    }
-    button {
-        background-color: transparent;
-        border: none;
-        width: 70px;
-        height: 40px;
     }
 `;
 
@@ -42,17 +41,41 @@ const Hero_pic = styled.picture`
             opacity: 1;
         }
     }
-
 `;
 
-class Header_art extends Component {
+const ChevronBTN = styled.button`
+    background-color: transparent;
+    border: none;
+    span {
+        height: 50px;
+        width: 50px;
+        border: solid grey;
+        border-width: 0 5px 5px 0;
+        display: inline-block;
+        transform: rotate(45deg);
+        text-align: right;
+        animation: bounce 600ms ease-in-out 600ms infinite alternate;
+        ::after {
+            height: 50px;
+            width: 50px;
+            margin: 10px;
+            content: '';
+            border: solid grey;
+            border-width: 0 5px 5px 0;
+            display: inline-block;
+            text-align: right;
+        }
+    }
+`;
+
+class Landing extends Component {
     render() {
         return (
             <div>
                 <Waterfall id="header-art_textbox">
                     <h1 id="header-art_h1">Jerm Estes</h1>
                     <h2 id="header-art_textbox_waterfall">Web developer<br />Designer<br />Creator</h2>
-                    <button><span id="header-art_chevron"></span></button>
+                    <ChevronBTN><span></span></ChevronBTN>
                 </Waterfall>
 
                 <Hero_pic id="header-art_picture">
@@ -65,4 +88,4 @@ class Header_art extends Component {
     }
 }
 
-export default Header_art;
+export default Landing;

@@ -21,7 +21,7 @@ const Navbar = styled.nav`
     padding: 0 1rem;
     @media screen and (min-width: ${screenBreakpoint1}) {
         grid-template-columns: repeat(12,1fr);
-        padding: none;
+        padding: 0;
     }
     ul {
         display: none;
