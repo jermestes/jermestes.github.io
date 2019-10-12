@@ -4,16 +4,18 @@ import Hero from '../assets/hero.jpg';
 import Hero_wide from '../assets/hero-wide.jpg';
 
 const Waterfall = styled.div`
+    font-family: ${props => props.theme.primaryfont}; 
     text-transform: uppercase;
     text-align: center;
     z-index: 30;
     position: relative;
     align-self: center;
     h1 {
-        background-color: #e4c8c4;
+        background-color: ${props => props.theme.pink};
         display: inline-block;
         font-size: 2.5rem;
     }
+    ${props => props.theme.h2};
     @media screen and (min-width: 700px) {
         display: block;
         grid-column: 1/7;
@@ -25,7 +27,7 @@ const Waterfall = styled.div`
     }
 `;
 
-const Hero_pic = styled.picture`
+const HeroPic = styled.picture`
     @media screen and (min-width: 700px) {
         position: static;
         height: 25rem;
@@ -78,11 +80,11 @@ class Landing extends Component {
                     <ChevronBTN><span></span></ChevronBTN>
                 </Waterfall>
 
-                <Hero_pic id="header-art_picture">
+                <HeroPic id="header-art_picture">
                     <source media="(min-width: 750px)" srcset={Hero} />
                     <source media="(max-width: 750px)" srcset={Hero_wide} />
                     <img src={Hero_wide} className="header-art_picture_img" alt="Jerm dribbling while coding" />
-                </Hero_pic>
+                </HeroPic>
             </div>
         );
     }

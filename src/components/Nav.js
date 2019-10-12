@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, NavLink, Switch} from 'react-router-dom';
+import {Route, NavLink, Switch} from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import HamburgerBTN from './HamburgerBTN';
 import Landing from './Landing';
@@ -17,7 +17,7 @@ const Navbar = styled.nav`
     display: grid;
     grid-template-rows: 3.75rem 3.75rem;  
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: #EEEEEE;
+    background-color: ${props => props.theme.lightgrey};
     padding: 0 1rem;
     @media screen and (min-width: ${screenBreakpoint1}) {
         grid-template-columns: repeat(12,1fr);
@@ -29,8 +29,8 @@ const Navbar = styled.nav`
         list-style: none;
         li a, li a:visited {
             font-weight: bolder;  
-            color: #747272;
-            font-family: 'Chakra Petch', sans-serif; 
+            color: ${props => props.theme.darkgrey};
+            font-family: ${props => props.theme.primaryfont}, sans-serif; 
             text-decoration: none; 
         }
         @media screen and (min-width: ${screenBreakpoint1}){
@@ -55,7 +55,6 @@ const Tophalf = styled.div`
     grid-row: 1/2;
     z-index: 10;
 `;
-
 
 const Bottomhalf = styled.div`
     grid-column: 1/13;
@@ -96,7 +95,7 @@ class Nav extends Component {
                     <ul>
                         <li><NavLink to="/about">About</NavLink></li>
                         <li><NavLink to="/work">Work</NavLink></li>
-                        <li><a href={Pdf} target="_BLANK">Resume</a></li>
+                        <li><a href={Pdf} target="_BLANK" rel="noopener noreferrer">Resume</a></li>
                         <li><NavLink to="/contact">Contact</NavLink></li>
                     </ul>
                     <Tophalf/>
