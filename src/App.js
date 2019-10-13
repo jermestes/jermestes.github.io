@@ -9,7 +9,7 @@ const theme = {
   lightgrey: "#EEEEEE",
   pink: "#E4C8C4",
   blue: "#75C4DB",
-  yellow:"#ffeba8",
+  gold:"#ffeba8",
   green: "#a8ffb7",
   //The fonts
   primaryfont: "Chakra Petch",
@@ -21,8 +21,8 @@ const theme = {
 function App() {
   return (
       <ThemeProvider theme={theme}>
-        <Nav></Nav>
-        <footer>© 2019</footer>
+          <Nav></Nav>
+          <footer>© 2019</footer>
       </ThemeProvider>  
   );
 }

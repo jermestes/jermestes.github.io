@@ -1,88 +1,57 @@
 import React, { Component } from 'react';
 
-let test = document.querySelector("span");
-console.log(test);
-
-//the toggle arrow that points up or to the left
-const arrowBackward = document.getElementById("arrowBackward");
-console.log(arrowBackward);
-
-//the toggle arrow that points down or the right
-const arrowForward = document.querySelector("#arrowForward");
-console.log(arrowForward);
-
-//both arrows
-const arrows = [arrowBackward, arrowForward];
-
-const projects = [1,2,3];
+//make this into array of objects with the project titles, descriptions, and images.
+const projects = [1,2,3,4,5,6];
 
 class Work extends Component {
     constructor(props) {
         super(props);
         this.state = {
             currentSlide: 1,
-            totalSlides: projects.length
-        }
+            totalSlides: projects.length,
+            topArrow: "grey",
+            bottomArrow: "black"
+        };
+        //this.projToggleBackward = this.projToggleBackward.bind(this);
+        //this.projToggleForward = this.projToggleForward.bind(this);
     }
 
-    //Change btn color from dark to light or vice versa
-    //To symbolize user can't scroll further up or down projects slides
-    colorChange = () => {
-        arrows.forEach(arrow => {
-            if (arrowBackward.target.style.fill == "black") {
-                arrowBackward.target.style.fill = "grey";
-                console.log('hello');
-            } else {
-                arrowBackward.target.style.fill = "black";
-                console.log('goodbye');
-            } 
-        });    
-    }
-
-    slideNumChange = () => {
-        console.log(arrows);
-        /*if (arrowBackward.id == "arrowBackward") {
-            console.log('hello');
-            this.setState({currentSlide: this.state.currentSlide-1});
-        } else {
-            this.setState({currentSlide: this.state.currentSlide+1});
-            console.log('goodbye');
-        } */
-    }
-
-    //Action when the bottom/right (forwards) arrow is clicked
-    projToggleForward = () => {
+    //Action when the DOWN/RIGHT (forwards) arrow is clicked
+    projToggleForward(arrow) {
         switch(this.state.currentSlide) {
-            //The end of the slides
+            //Clicked at the last slide (do nothing)
             case this.state.totalSlides:
                 break
-            //Going to the last slide or away from the first
+            //Clicked at second-to-last/going-to-last slide (make down/right arrow light)
             case this.state.totalSlides - 1:
+                this.setState({bottomArrow: "grey",currentSlide: this.state.currentSlide+1});
+            //Clicked at first/going-to-2nd slide (make up/left arrow dark)
             case 1:
-                this.slideNumChange();
-                this.colorChange();
+                this.setState({topArrow: "black",currentSlide: this.state.currentSlide+1});
                 break
             //For any of the slides in the middle, where color isn't affected
             default:
-                this.slideNumChange();
+                this.setState({currentSlide: this.state.currentSlide+1});
         }
     }
 
-    //Action when the top/left arrow is clicked
-    projToggleBackward = () => {
+    //Action when the UP/LEFT (backwards) arrow is clicked
+    projToggleBackward(arrow) {
         switch(this.state.currentSlide) {
-            //The start of the slides
+            //Clicked at the first slide (do nothing)
             case 1:
                 break
-            //Going to the first slide or away from the last slide
+            //Clicked at the 2nd slide (make up/left arrow light)
             case 2:
+                this.setState({topArrow: "grey",currentSlide: this.state.currentSlide-1});
+                break
+            //Clicked at the last slide (make down/right arrow dark)
             case this.state.totalSlides:
-                this.slideNumChange();
-                this.colorChange();
+                this.setState({bottomArrow: "black",currentSlide: this.state.currentSlide-1});
                 break
             //For any of the slides in the middle, where color isn't affected
             default:
-                this.slideNumChange();
+                this.setState({currentSlide: this.state.currentSlide-1});
         }
     }
 
@@ -92,8 +61,8 @@ class Work extends Component {
                 { /*the clicker*/ }
                 <div>
                     <svg width="250" height="250">
-                        <polygon fill={props => props.theme.darkgrey} points="0,250 125,125 250,250" 
-                        id="arrowBackward" onClick={this.projToggleBackward}/>
+                        <polygon fill={this.state.topArrow} points="0,250 125,125 250,250" 
+                        id="arrowBackward" arrow="backward" onClick={(e) => {this.projToggleBackward(e)}}/>
                     </svg>
 
                     <p><span>{this.state.currentSlide}</span>
@@ -102,8 +71,8 @@ class Work extends Component {
                     </p>
                     
                     <svg width="250" height="250">
-                        <polygon fill="black" points="0,0 125,125 250,0" 
-                        id="arrowForward" onClick={this.projToggleForward}/>
+                        <polygon fill={this.state.bottomArrow} points="0,0 125,125 250,0" 
+                        id="arrowForward" arrow="forward" onClick={(e) => {this.projToggleForward(e)}}/>
                     </svg>
                 </div>
 
@@ -112,7 +81,7 @@ class Work extends Component {
                 </div>
 
                 { /*the project image*/ }
-                <img></img>
+                <img alt="project"></img>
             </div>
         );
     }

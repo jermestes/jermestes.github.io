@@ -81,8 +81,8 @@ class Landing extends Component {
                 </Waterfall>
 
                 <HeroPic id="header-art_picture">
-                    <source media="(min-width: 750px)" srcset={Hero} />
-                    <source media="(max-width: 750px)" srcset={Hero_wide} />
+                    <source media="(min-width: 750px)" srcSet={Hero} />
+                    <source media="(max-width: 750px)" srcSet={Hero_wide} />
                     <img src={Hero_wide} className="header-art_picture_img" alt="Jerm dribbling while coding" />
                 </HeroPic>
             </div>
