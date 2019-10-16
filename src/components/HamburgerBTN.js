@@ -5,6 +5,7 @@ const screenBreakpoint1 = '900px';
 
 //Hamburger button for mobile/small screen navigation
 const Hamburger = styled.button`
+    cursor: pointer;
     align-self: center;
     border: none;
     grid-column: 3/4;

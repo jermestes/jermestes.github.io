@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import {Route, NavLink, Switch} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Logo from '../assets/logo.png';
 import HamburgerBTN from './HamburgerBTN';
-import Landing from './Landing';
-import About from './About';
-import Work from './Work';
-import Contact from './Contact';
 import Pdf from '../assets/jeremyestes_resume.pdf';
 import styled from 'styled-components';
 
@@ -33,14 +29,17 @@ const Navbar = styled.nav`
             font-family: ${props => props.theme.primaryfont}, sans-serif; 
             text-decoration: none; 
         }
-        @media screen and (min-width: ${screenBreakpoint1}){
+        li a:hover {
+            border-bottom: 5px solid red;
+        }
+        @media screen and (min-width: ${props => props.theme.nowDesktop}){
             grid-column: 4/12;
             grid-row: 1/2;
             display: grid;
             justify-items: start;
             align-items: end;
             margin: 0;
-            padding: 0;
+            padding-bottom: 10px;
             z-index: 20;
             grid-template-columns: 2fr 2fr 2fr 2fr;
             grid-template-rows: auto;
@@ -88,28 +87,18 @@ const Navlogo = styled(NavLink)`
 class Nav extends Component {
     render() {
         return (
-            <header>
-                <Navbar>
-                    <Navlogo to="/"><img src={Logo} alt="Site Logo"/></Navlogo>
-                    <HamburgerBTN />
-                    <ul>
-                        <li><NavLink to="/about">About</NavLink></li>
-                        <li><NavLink to="/work">Work</NavLink></li>
-                        <li><a href={Pdf} target="_BLANK" rel="noopener noreferrer">Resume</a></li>
-                        <li><NavLink to="/contact">Contact</NavLink></li>
-                    </ul>
-                    <Tophalf/>
-                    <Bottomhalf/>
-                </Navbar>       
-                
-                <Switch>
-                    <Route path="/about" component={About} />
-                    <Route path="/work" component={Work} /> 
-                    <Route path="/contact" component={Contact} />   
-                    <Route exact path="/" component={Landing} />
-                </Switch>            
-            </header>
-
+            <Navbar>
+                <Navlogo to="/"><img src={Logo} alt="Site Logo"/></Navlogo>
+                <HamburgerBTN />
+                <ul>
+                    <li><NavLink to="/about">About</NavLink></li>
+                    <li><NavLink to="/work" activeClassName="activeLink">Work</NavLink></li>
+                    <li><a href={Pdf} target="_BLANK" rel="noopener noreferrer">Resume</a></li>
+                    <li><NavLink to="/contact" activeClassName="activeLink">Contact</NavLink></li>
+                </ul>
+                <Tophalf/>
+                <Bottomhalf/>
+            </Navbar>      
         );
     }
 }

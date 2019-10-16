@@ -1,7 +1,30 @@
 import React, { Component } from 'react';
 
 //make this into array of objects with the project titles, descriptions, and images.
-const projects = [1,2,3,4,5,6];
+const projects = [
+    {
+        name: 'The BAKEd Sale',
+        desc: 'For my Interactive App Design class, the term project was a real-time app for a fictitious food ordering service where price and quantity available are variable and can change at a moments notice. The app was built with ReactJS and uses Firebase for the backend.', 
+        imgSrc: 'project1.png', 
+        liveLink: 'https://thebakedsale.jermestes.com',
+        codeLink: 'https://github.com/jermestes/idm364'
+    } ,
+    {
+        name: 'iTunes Redesign',
+        desc: 'My UI Design courses term project task was to make a prototype which redesigns the UI of an existing desktop website or application.  ',
+        imgSrc: 'project3.png',
+        liveLink: 'https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off',
+        codeLink: ''
+    }, 
+    { 
+        name: 'NBA Zodiac',
+        desc: 'The term project for my Scripting I class was to create a custom zodiac web page based upon the Zodiac Algorithm. A user could enter a birth-date or choose a sign to see & hear a unique zodiac. This was coded in Vanilla JavaScript and images for the 12 signs were done in Adobe Photoshop.', 
+        imgSrc: 'project2.png',
+        liveLink: 'https://jermestes.com/idm231',
+        codeLink: 'https://github.com/jermestes/idm231'
+    }  
+    
+];
 
 class Work extends Component {
     constructor(props) {
@@ -25,6 +48,7 @@ class Work extends Component {
             //Clicked at second-to-last/going-to-last slide (make down/right arrow light)
             case this.state.totalSlides - 1:
                 this.setState({bottomArrow: "grey",currentSlide: this.state.currentSlide+1});
+                break
             //Clicked at first/going-to-2nd slide (make up/left arrow dark)
             case 1:
                 this.setState({topArrow: "black",currentSlide: this.state.currentSlide+1});
@@ -59,7 +83,7 @@ class Work extends Component {
         return (
             <div>
                 { /*the clicker*/ }
-                <div>
+                <div id="projTog">
                     <svg width="250" height="250">
                         <polygon fill={this.state.topArrow} points="0,250 125,125 250,250" 
                         id="arrowBackward" arrow="backward" onClick={(e) => {this.projToggleBackward(e)}}/>
@@ -77,11 +101,15 @@ class Work extends Component {
                 </div>
 
                 { /* the project name & description*/ }
-                <div id="project-desc">
-                </div>
+                <div className="content" id="projView">
+                    <div id="project-desc">
+                        <h2>{projects[this.state.currentSlide-1].name}</h2>
+                        <p>{projects[this.state.currentSlide-1].desc}</p>
+                    </div>
 
-                { /*the project image*/ }
-                <img alt="project"></img>
+                    { /*the project image*/ }
+                    <img alt={`${projects[this.state.currentSlide-1].name} project`}></img>
+                </div>
             </div>
         );
     }

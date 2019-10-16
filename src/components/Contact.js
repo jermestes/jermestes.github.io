@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+//import Github from "../s/profile_icons/github/Github-Mark/PNG/GitHub-Mark-120px-plus.png";
+//import LinkedIn from "../assets/profile_icons/linkedin/iconfinder_linkedin_circle_color_107178.png";
 
 const Emailform = styled.form`
     display: flex;
@@ -27,7 +29,7 @@ const Emailform = styled.form`
 class Contact extends Component {
     render() {
         return (
-            <div>
+            <div className="content">
                 <div className="main_sub-secs form-container">
                     <h2>Send A Message</h2>
                     <Emailform action="send.php" method="POST">       
