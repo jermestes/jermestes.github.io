@@ -10,7 +10,8 @@ const AboutPic = styled.img`
 class About extends Component {
     render() {
         return (
-            <div className="content">
+            <main>
+            <div className="content .main_secs">
                 <AboutPic src={Aboutpic} className="about-pic" alt="Illustrated self-portrait of Jerm"/>
                 <div id="intro" className="main_sub-secs">
                     <h2>Intro</h2>
@@ -21,6 +22,7 @@ class About extends Component {
                                    
                 </div>
             </div>
+            </main>
         );
     }
 }

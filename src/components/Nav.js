@@ -5,8 +5,6 @@ import HamburgerBTN from './HamburgerBTN';
 import Pdf from '../assets/jeremyestes_resume.pdf';
 import styled from 'styled-components';
 
-const screenBreakpoint1 = '900px';
-
 //The full nav, containing a <ul> list of <li> links
 const Navbar = styled.nav`
     text-transform: uppercase;
@@ -15,7 +13,7 @@ const Navbar = styled.nav`
     grid-template-columns: 1fr 1fr 1fr;
     background-color: ${props => props.theme.lightgrey};
     padding: 0 1rem;
-    @media screen and (min-width: ${screenBreakpoint1}) {
+    @media screen and (min-width: ${props => props.theme.nowDesktop}) {
         grid-template-columns: repeat(12,1fr);
         padding: 0;
     }
@@ -23,6 +21,14 @@ const Navbar = styled.nav`
         display: none;
         text-transform: uppercase;
         list-style: none;
+        .activeLink {
+            border-bottom: 5px solid;
+        }
+        :first-child {
+            a.activeLink {
+                border-color: red;
+            }
+        }
         li a, li a:visited {
             font-weight: bolder;  
             color: ${props => props.theme.darkgrey};
@@ -59,7 +65,7 @@ const Bottomhalf = styled.div`
     grid-column: 1/13;
     grid-row: 2/3;
     z-index: 10;
-    @media screen and (min-width: ${screenBreakpoint1}) {
+    @media screen and (min-width: ${props => props.theme.nowDesktop}) {
         background-color: white;
     }
 `;
@@ -78,7 +84,7 @@ const Navlogo = styled(NavLink)`
             opacity: 0.9;
         }
     }
-    @media screen and (min-width: ${screenBreakpoint1}) {
+    @media screen and (min-width: ${props => props.theme.nowDesktop}) {
         grid-column: 1/4;
         grid-row: 1/3;
     }
@@ -91,7 +97,7 @@ class Nav extends Component {
                 <Navlogo to="/"><img src={Logo} alt="Site Logo"/></Navlogo>
                 <HamburgerBTN />
                 <ul>
-                    <li><NavLink to="/about">About</NavLink></li>
+                    <li><NavLink to="/about" activeClassName="activeLink" activeStyle={{borderColor: '#75C4DB'}}>About</NavLink></li>
                     <li><NavLink to="/work" activeClassName="activeLink">Work</NavLink></li>
                     <li><a href={Pdf} target="_BLANK" rel="noopener noreferrer">Resume</a></li>
                     <li><NavLink to="/contact" activeClassName="activeLink">Contact</NavLink></li>

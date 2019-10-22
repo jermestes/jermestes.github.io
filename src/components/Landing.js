@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import Hero from '../assets/hero.jpg';
 import Hero_wide from '../assets/hero-wide.jpg';
+import {Link} from 'react-router-dom';
 
 const Header = styled.header`
     display: flex;
@@ -97,7 +98,7 @@ class Landing extends Component {
                 <Waterfall id="header-art_textbox">
                     <h1 id="header-art_h1">Jerm Estes</h1>
                     <h2 id="header-art_textbox_waterfall">Web developer<br />Designer<br />Creator</h2>
-                    <ChevronBTN><span></span></ChevronBTN>
+                    <Link to="/about"><ChevronBTN><span></span></ChevronBTN></Link>
                 </Waterfall>
 
                 <HeroPic id="header-art_picture">
