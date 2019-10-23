@@ -14,7 +14,7 @@ const theme = {
   pink: "#E4C8C4",
   blue: "#75C4DB",
   gold:"#ffeba8",
-  green: "#a8ffb7",
+  green: "0C7C00",
   //The fonts
   primaryfont: "Chakra Petch",
   secondaryfont: "Roboto",
@@ -28,17 +28,23 @@ const theme = {
 const Wrapper = styled.div`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  main, header {
+  header {
     @media screen and (min-width: ${props => props.theme.nowTablet}) {
       padding: 1.3125rem 0;
     }
   }
 
   main {
+    padding: 1.3125rem;
+    h2 {
+      color: ${props => props.theme.darkgrey};
+      font-weight: 500;
+    }
     @media screen and (min-width: ${props => props.theme.nowDesktop}) {
         display: grid;
         grid-template-columns: 1.5fr 10fr .5fr;
         grid-template-rows: auto;
+        padding: 1.3125rem 0;
     }
   }
   
@@ -63,19 +69,6 @@ const Wrapper = styled.div`
   ul {
     list-style: none;
   }
-  .content {
-    display: flex;
-    flex-flow: column wrap;
-    align-items: center;
-    @media screen and (min-width: ${props => props.theme.nowDesktop}) {
-      flex-flow: row wrap;
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
-    h2 {
-      font-weight: 500;
-    }
-  }
   
   footer {
     background-color: ${props => props.theme.lightgrey};
@@ -86,7 +79,6 @@ const Wrapper = styled.div`
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    margin-right: 3rem;
     img {
         margin-right: .5rem;
         width: 3.125rem;
