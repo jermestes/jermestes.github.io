@@ -33,20 +33,6 @@ const Wrapper = styled.div`
       padding: 1.3125rem 0;
     }
   }
-
-  main {
-    padding: 1.3125rem;
-    h2 {
-      color: ${props => props.theme.darkgrey};
-      font-weight: 500;
-    }
-    @media screen and (min-width: ${props => props.theme.nowDesktop}) {
-        display: grid;
-        grid-template-columns: 1.5fr 10fr .5fr;
-        grid-template-rows: auto;
-        padding: 1.3125rem 0;
-    }
-  }
   
   h1,h2,h3,h4,h5,h6, li {
     font-family: ${props => props.theme.primaryfont}; 

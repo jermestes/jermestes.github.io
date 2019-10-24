@@ -20,7 +20,7 @@ const Header = styled.header`
 const Waterfall = styled.div`
     text-transform: uppercase;
     text-align: center;
-    z-index: 30;
+    z-index: 25;
     align-self: center;
     line-height: 3rem;
     
@@ -57,15 +57,21 @@ const HeroPic = styled.picture`
     }
     img {
         width: 100%;
-        opacity: .5;
         @media screen and (min-width: ${props => props.theme.nowTablet}) {
             width: 22.5rem;
-            opacity: 1;
         }
     }
 `;
 
 const ChevronBTN = styled.button`
+    @keyframes bounce {
+        from {
+            margin-top: 0;
+        }
+        to {
+            margin-top: .5rem;
+        }
+    }
     background-color: transparent;
     border: none;
     span {
