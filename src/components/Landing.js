@@ -9,6 +9,9 @@ const Header = styled.header`
     flex-flow: column-reverse ;
     justify-content: center;
     align-items: center;
+    h2 {
+    font-size: 1.5rem;
+    }
     @media screen and (min-width: ${props => props.theme.nowDesktop}) {
         flex-flow: row wrap;
     }

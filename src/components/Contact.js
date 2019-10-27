@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import LinkList, {EmailForm as Form} from './ContactUI';
+import LinkList, {EmailForm as Form} from './Statics';
 
 const ContactContainer = styled.main`
-    display: block;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
     padding: 1.3125rem;
     h2 {
       color: ${props => props.theme.darkgrey};
@@ -17,7 +20,7 @@ const ContactContainer = styled.main`
         align-items: center;
     }
     div:nth-of-type(1) {
-        margin: 0 6.25rem;
+        margin: auto;
     }
     div {
         grid-column: 1/3;
@@ -42,8 +45,8 @@ const ContactContainer = styled.main`
         }
         button {
             font-family: ${props => props.theme.primaryfont}
-            background-color: ${props => props.theme.green};
-            border-color: ${props => props.theme.darkgrey};
+            background-color: ${props => props.theme.lightgrey};
+            border-color: ${props => props.theme.green};
             width: 25rem;
             height: 2rem;
             cursor: pointer;
@@ -58,15 +61,24 @@ const ContactContainer = styled.main`
     }
 
     ul {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around; 
         grid-column: 2/3;
         grid-row: 1/2;
         justify-self: start;
         text-transform: capitalize;
         li {
-            padding: 1rem 0;
+            padding: 1.5rem;
+            @media screen and (min-width: ${props => props.theme.nowDesktop}) {
+                padding: 1rem 0;
+            }
             a {
                 text-decoration: none;
             }
+        }
+        @media screen and (min-width: ${props => props.theme.nowDesktop}) {
+            display: block;
         }
     }
 `;

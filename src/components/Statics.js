@@ -1,5 +1,6 @@
 import React from 'react';
 
+//The CONTACT PAGE email form
 const EmailForm = () => {
     return (
         <div className="main_sub-secs form-container">
@@ -14,6 +15,7 @@ const EmailForm = () => {
     );
 };
 
+//The CONTACT PAGE link list (links to my other professional profiles)
 const LinkList = () => {
     const profiles = [
         {name: 'codepen', url: "https://codepen.io/jermestes", imgType: 'png'},

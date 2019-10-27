@@ -14,13 +14,14 @@ const theme = {
   pink: "#E4C8C4",
   blue: "#75C4DB",
   gold:"#ffeba8",
-  green: "0C7C00",
+  green: "#0C7C00",
   //The fonts
   primaryfont: "Chakra Petch",
   secondaryfont: "Roboto",
   //device breakpoints
   nowTablet: "43.75rem",
   nowDesktop: "56.25rem",
+  nowLargeDesktop: "75rem",
   //Other
   h2: "h2 {font-weight: 500;}"
 }
@@ -48,10 +49,6 @@ const Wrapper = styled.div`
     margin: 0;
   }
 
-  h2 {
-    font-size: 1.5rem;
-  }
-
   ul {
     list-style: none;
   }
@@ -76,9 +73,6 @@ const Wrapper = styled.div`
 }
 
 .main_secs {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
     width: 100%;
     padding: 2rem 0;
     h1 {
@@ -93,7 +87,7 @@ const Wrapper = styled.div`
         font-size: 2.25rem;
     }
     h2, p {
-        color: $dark-grey;
+        color: ${props => props.theme.darkgrey};
     }
 }
 }
