@@ -13,7 +13,7 @@ const theme = {
   lightgrey: "#EEEEEE",
   pink: "#E4C8C4",
   blue: "#75C4DB",
-  gold:"#ffeba8",
+  gold:"#ccb37a",
   green: "#0C7C00",
   //The fonts
   primaryfont: "Chakra Petch",

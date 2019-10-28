@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Aboutpic from '../assets/BMoviePoster-cropped.jpg';
 
 const AboutContainer = styled.main`
@@ -11,7 +11,7 @@ const AboutContainer = styled.main`
     color: ${props => props.theme.darkgrey};
     a, a:visited {
         color: ${props => props.theme.darkgrey};
-        text-decoration: underline;
+        text-decoration: none;
     }
     img, #intro {
         width: 90%;
@@ -53,6 +53,9 @@ const AboutContainer = styled.main`
         flex-flow: column wrap;
         justify-content: center;
     }
+    a:hover {
+        color: ${props => props.theme.blue};
+    }
     
 `;
 
@@ -66,8 +69,8 @@ class About extends Component {
                         <h2>Intro</h2>
                         <p>
                             My name is Jeremy, but most just call me Jerm. I'm a web developer and designer with an all-around
-                            IT background. I've recently graduated from college and am now available for hire.
-                            <NavLink to="../work"><strong> See my work</strong></NavLink>
+                            IT background. I've recently graduated from college and am now available for hire.&nbsp;
+                            <Link to="../work"><strong>See my work</strong></Link>
                         </p>
                                     
                     </div>

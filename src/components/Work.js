@@ -83,6 +83,9 @@ const ProjTog = styled.div`
     flex-flow: column wrap;
     text-align: center;
     justify-content: center;
+    svg {
+        cursor: pointer;
+    }
 `;
 
 const ProjView = styled.div`

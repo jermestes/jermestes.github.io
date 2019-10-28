@@ -64,8 +64,20 @@ const Navbar = styled.nav`
         width: 50vw;
         text-transform: uppercase;
         list-style: none;
-        .activeLink, .activeLink:hover {
+        .activeLink {
             border-bottom: 5px solid ${props => props.theme.blue};
+        }
+        #aboutLink {
+            border-color: ${props => props.theme.pink};
+        }
+        #workLink {
+            border-color: ${props => props.theme.blue};
+        }
+        #resumeLink {
+            border-color: ${props => props.theme.gold};            
+        }
+        #contactLink {
+            border-color: ${props => props.theme.green};
         }
         li a, li a:visited {
             font-weight: bolder;  
@@ -148,10 +160,10 @@ class Nav extends Component {
                 <Navlogo to="/"><img src={Logo} alt="Site Logo"/></Navlogo>
                 <HamburgerBTN />
                 <ul id="burger">
-                    <li><NavLink to="/about" activeClassName="activeLink">About</NavLink></li>
-                    <li><NavLink to="/work" activeClassName="activeLink">Work</NavLink></li>
-                    <li><a href={Pdf} target="_BLANK" rel="noopener noreferrer">Resume</a></li>
-                    <li><NavLink to="/contact" activeClassName="activeLink">Contact</NavLink></li>
+                    <li><NavLink to="/about" activeClassName="activeLink" id="aboutLink">About</NavLink></li>
+                    <li><NavLink to="/work" activeClassName="activeLink" id="workLink">Work</NavLink></li>
+                    <li><a href={Pdf} target="_BLANK" rel="noopener noreferrer" id="resumeLink">Resume</a></li>
+                    <li><NavLink to="/contact" activeClassName="activeLink" id="contactLink">Contact</NavLink></li>
                 </ul>
                 <div id="nav-tophalf" className="nav-background"/>
                 <div id="nav-bottomhalf" className="nav-background"/>

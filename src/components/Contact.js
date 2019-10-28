@@ -28,6 +28,9 @@ const ContactContainer = styled.main`
         text-align: center;
         align-content: center;
         justify-self: center;
+        h2 {
+            font-size: 2.25rem;
+        }
         form {
             display: flex;
             flex-flow: column nowrap;
@@ -44,17 +47,17 @@ const ContactContainer = styled.main`
             font-family: "Roboto";
         }
         button {
-            font-family: ${props => props.theme.primaryfont}
+            font-family: ${props => props.theme.primaryfont};
+            font-size: 1.25rem;
             background-color: ${props => props.theme.lightgrey};
-            border-color: ${props => props.theme.green};
+            border: 3px solid ${props => props.theme.green};
             width: 25rem;
             height: 2rem;
             cursor: pointer;
             text-transform: uppercase;
             :hover {
-                background-color: white;
-                border-color: black;
-                color: black;
+                background-color: ${props => props.theme.green};
+                color: white;
             }   
         }
     }

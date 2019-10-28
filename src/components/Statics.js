@@ -6,9 +6,9 @@ const EmailForm = () => {
         <div className="main_sub-secs form-container">
             <h2>Send A Message</h2>
             <form action="send.php" method="POST">       
-                <input name="sender-name" type="text" placeholder="Name" />
-                <input name="sender-email" type="email" placeholder="Email" />
-                <textarea name="sender-message" placeholder="Your message"></textarea>
+                <input name="sender-name" type="text" placeholder="Name" required/>
+                <input name="sender-email" type="email" placeholder="Email" required/>
+                <textarea name="sender-message" placeholder="Your message" required></textarea>
                 <button className="btn contact-btn" type="submit">Send</button>
             </form>
         </div>
