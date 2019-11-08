@@ -1,2 +1,540 @@
-@import '_header.scss';
-@import '_mains.scss';
+// General styles (loading fonts, variables, etc) 
+@font-face {
+    font-family: 'Chakra Petch';
+    src: /*url('fonts/Chakra_Petch.woff2') format(woff2),*/
+    url('../fonts/Chakra_Petch/ChakraPetch-Regular.ttf') format(woff);     
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:/*url('/fonts/roboto.woff2') format(woff2),*/
+    url('../fonts/Roboto/Roboto-Regular.ttf') format(woff);     
+}
+
+@keyframes bounce {
+    from {
+        padding-top: .5rem;
+    }
+    to {
+        padding-top: 0;
+    }
+}
+
+$lightgrey: #EEEEEE;
+$darkgrey: #7b7879;
+$pink: #E4C8C4;
+$blue: #75C4DB;
+$gold:#ccb37a;
+$green: #00993a;
+$nowTablet: 43.75rem; //700px
+$nowDesktop: 56.25rem; //900px
+$nowLargeDesktop: 85.375rem; //1440px
+$nowTV: 120rem; //1920px
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    font-size: 100%;
+    scroll-behavior: smooth;
+    @media screen and (min-width: $nowLargeDesktop){
+        font-size: 120%;
+    }
+    @media screen and (orientation: portrait) and (min-width: $nowTablet) {
+        font-size: 125%;
+    }
+    @media screen and (min-width: $nowTV) {
+        font-size: 150%;
+    }
+    @media screen and (orientation: portrait) and (min-width: $nowDesktop) {
+        font-size: 150%;
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    line-height: 3rem;
+    display: block;
+}
+
+section {
+    border-top: .0625rem solid $lightgrey;
+    padding: 3rem 8%;
+}
+
+.sub-sec {
+    @media screen and (min-width: $nowTablet) {
+        margin: 0 1rem;
+    }
+}
+
+h6,h5,h4,h3,h2,h1{
+    font-family: 'Chakra Petch', sans-serif;
+    margin: 0;
+}
+
+h2:not(.waterfallh2) {
+    font-weight: 400;
+    font-size: 2.25rem;
+    color: $darkgrey;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    &:focus {
+        outline: 0;
+        * {outline: 0;}
+    }
+}
+
+p {
+    color: $darkgrey;
+    max-width: 24.75rem;
+}
+
+//START OF NAV BAR BLOCK 
+nav {
+    text-transform: uppercase;
+    display: grid;
+    grid-template-rows: 2.65rem 2.65rem;  
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: $lightgrey;
+    li a, li a:visited {
+        font-weight: bolder;  
+        color: $darkgrey;
+        font-family: 'Chakra Petch', sans-serif; 
+        text-decoration: none;
+        &:hover {
+            border-bottom: .3125rem solid $blue;
+        } 
+    }
+    @media screen and (min-width: $nowDesktop) {
+        grid-template-rows: 3.75rem 3.75rem;  
+        grid-template-columns: repeat(12,1fr);
+        padding: 0;
+    }
+}
+
+.nav-logo {
+    justify-self: center;
+    align-self: center;
+    z-index: 20;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    height: 4.75rem;
+    @media screen and (min-width: $nowDesktop) {
+        height: 6.25rem;
+        grid-column: 1/4;
+        grid-row: 1/3;
+    }
+}
+
+//the two states of the nav ul (link list container)
+.nav-links {
+    width: 50vw;
+    height: 100vh;
+    background-color: $lightgrey;
+    text-align: center;
+    line-height: 3rem;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    transition: right 500ms ease-in-out;
+    position: fixed;
+    right: -100vw;
+    text-transform: uppercase;
+    list-style: none;
+    @media screen and (min-width: $nowDesktop){
+        grid-column: 4/12;
+        grid-row: 1/2;
+        display: grid;
+        justify-items: start;
+        align-items: end;
+        margin: 0;
+        z-index: 20;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        grid-template-rows: auto;
+        width: inherit;
+        position: static;
+        height: auto;
+        width: inherit;
+        line-height: inherit;
+    }
+}
+
+ul.open {
+    position: fixed;
+    z-index: 30;
+    right: 0;
+    @media screen and (min-width: $nowDesktop){
+        grid-column: 4/12;
+        grid-row: 1/2;
+        display: grid;
+        justify-items: start;
+        align-items: end;
+        margin: 0;
+        padding-bottom: .625rem;
+        z-index: 30;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
+        grid-template-rows: auto;
+        width: inherit;
+        height: inherit;
+        position: static;
+    }
+}
+
+//the two states of hamburger btn
+.hamburger {
+    background-color: transparent;
+    width: auto;
+    z-index: 40;
+    cursor: pointer;
+    align-self: center;
+    justify-self: end;
+    border: none;
+    grid-column: 3/4;
+    grid-row: 1/3;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    padding: 0 1rem 0 0;
+    &:focus {
+        outline: none;
+    }
+    div {
+        transition: transform 500ms ease-in;
+        height: .353125rem;
+        background-color: grey;
+        margin: .25rem 0;
+    }
+    div:first-child {
+        transform-origin: top right;
+        width: 3rem;
+    }
+    div:nth-child(2) {
+        width: 2.25rem;
+        transition: opacity 600ms;
+    }
+    div:last-child {
+        transform-origin: bottom right;
+        width: 1.5rem;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        display: none;
+    }
+}
+
+.x {
+    div {
+        &:first-child {
+            transform: rotate(-45deg);
+        }
+        &:nth-child(2) {
+            opacity: 0;
+        }
+        &:last-child {
+            width: 3rem;
+            transform: rotate(45deg);
+            margin: .55rem 0 0 0;
+        }
+    }
+}
+
+/*the top & bottom halves of the nav background, used to allow logo to have a color-split effect*/
+.nav-tophalf {
+    grid-column: 1/13;
+    grid-row: 1/2;
+    z-index: 10;
+}
+
+.nav-bottomhalf {
+    grid-column: 1/13;
+    grid-row: 2/3;
+    z-index: 10;
+    @media screen and (min-width: $nowDesktop) {
+        background-color: white;
+    }
+}//END OF NAV BAR BLOCK
+
+
+//START OF HEADER(LANDING) BLOCK
+header {
+    min-height: calc(100vh + 2rem);
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    h1 {
+        text-transform: uppercase;
+        background-color: $pink;
+        display: inline-block;
+        font-size: 2.5rem;
+    }
+    .waterfallh2 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+    @media screen and (min-width: $nowTablet) {
+        padding: 1.5rem 0 3rem 0;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        min-height: calc(100vh - 7.5rem);
+        flex-flow: row wrap;
+        align-content: flex-start;
+        justify-content: center;
+    }
+    @media screen and (orientation: portrait) and (min-width: $nowDesktop){
+        height: 100vh;
+        flex-flow: column-reverse;
+        align-content: center;
+        justify-content: start;
+    }
+}
+
+//the title text that goes beside/underneath hero pic
+.header-waterfall {
+    text-align: center;
+    z-index: 25;
+    align-self: center;
+    line-height: 3rem;
+    padding: 2rem 0;
+    @media screen and (min-width: $nowTablet) {
+        display: block;
+        padding-top: 2.5rem;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        text-align: right;
+        align-self: start;
+        padding: 0 1rem 0 0;
+    }  
+    @media screen and (orientation: portrait) {
+        text-align: center;
+        align-self: inherit;
+        padding: 2rem 0;
+    }
+}
+
+.header-picture {
+    @media screen and (min-width: $nowTablet) {
+        height: 25rem;
+    }
+    img {
+        width: 100%;
+        @media screen and (min-width: $nowTablet) {
+            width: 22.5rem;
+        }
+    }
+}
+
+.header-chevron {
+    animation: bounce 600ms ease-in-out 600ms infinite alternate;
+    background-color: transparent;
+    border: none;
+    padding-top: .5rem;
+    span {
+        cursor: pointer;
+        height: 3.125rem;
+        width: 3.125rem;
+        border: solid grey;
+        border-width: 0 .3125rem .3125rem 0;
+        display: inline-block;
+        transform: rotate(45deg);
+        text-align: right;
+        &::after {
+            height: 3.125rem;
+            width: 3.125rem;
+            margin: .625rem;
+            content: '';
+            border: solid grey;
+            border-width: 0 .3125rem .3125rem 0;
+            display: inline-block;
+            text-align: right;
+        }
+    }
+    @media screen and (orientation: landscape) {
+        padding-right: .5rem;
+    }
+}//END OF HEADER(LANDING) BLOCK
+
+//START OF ABOUT SECTION BLOCK
+#about {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    img, .about-text {
+        width: 90%;
+        max-width: 24.75rem;
+        @media screen and (min-width: $nowDesktop) {
+            padding: 0 1rem;
+        }
+    }
+    a, a:visited {
+        color: $darkgrey;
+        text-decoration: none;
+        &:hover {
+            color: $blue;
+        }
+    }
+}//END OF ABOUT SECTION BLOCK
+
+//START OF WORK SECTION BLOCK
+#work {
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: center;
+    color: $darkgrey;
+    img {
+        width: 90%;
+        max-width: 24.75rem;
+        @media screen and (min-width: $nowDesktop) {
+            max-width: none;
+            width: 25rem;
+        }
+    }    
+    button {
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1.25rem;
+        padding: .5rem 1rem;
+        margin: .75rem 0;
+        border:  .125rem solid $blue;
+        background-color: $lightgrey;
+        border-color: $blue;
+        font-family: 'Chakra Petch';
+        text-transform: uppercase;
+        &:hover {
+            background-color: white;
+        }
+    }
+    @media screen and (min-width: $nowDesktop) {
+        flex-flow: row-reverse nowrap;
+    }
+}
+
+.work-toggle {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    padding: .5rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    p {
+        display: block;
+        padding: 0 2rem;
+        margin: auto 0;
+        @media screen and (min-width: $nowDesktop) {
+            padding: 1rem 0;
+        }
+    }
+    svg:first-child {
+            transform: rotate(-90deg);
+        }
+    svg:nth-child(3) {
+        transform: rotate(-90deg);
+    }
+    svg {
+        cursor: pointer;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        box-shadow: none;
+        padding: 0;
+        background-color: transparent;
+        flex-flow: column wrap;
+        border: none;
+        width: auto;
+        bottom: auto;
+        justify-content: center;
+        justify-self: start;
+        align-self: start;
+        svg:first-child {
+            transform: rotate(0deg);
+        }
+        svg:nth-child(3) {
+            transform: rotate(0deg);
+        }   
+    }
+}
+
+.work-details {
+    min-height: 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: center;
+    align-content: center;
+    div {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        padding: .75rem;
+    }
+    @media screen and (min-width: $nowTablet) {
+        padding: 0 1rem;
+        justify-self: start;
+    }
+}//END OF WORK SECTION BLOCK
+
+
+//START OF CONTACT SECTION BLOCK
+#contact {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    color: black;
+    a, a:visited {
+        text-decoration: none;
+    }
+    ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center; 
+        justify-self: start;
+        text-transform: capitalize;
+        li {
+            padding: 1.5rem;
+            a {
+                text-decoration: none;
+            }
+        }
+        @media screen and (min-width: $nowDesktop) {
+            display: block;
+            padding: 0 .5rem 0 0;
+        }
+    }
+}
+.profile_links {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: black;
+    img {
+        margin-right: .5rem;
+        width: 3.125rem;
+    }
+    :visited {
+        color: black;
+    }
+}//END OF CONTACT SECTION BLOCK
+
+//THE FOOTER BLOCK...END OF FILE
+footer {
+    font-family: 'Chakra Petch', sans-serif;
+    color: black;
+    background-color: $lightgrey;
+    text-align: center;
+    width: 100%;
+}
