@@ -63,7 +63,6 @@ body {
 }
 
 section {
-    border-top: .0625rem solid $lightgrey;
     padding: 3rem 8%;
 }
 
@@ -234,6 +233,7 @@ ul.open {
 }
 
 .x {
+    position: fixed;
     div {
         &:first-child {
             transform: rotate(-45deg);
@@ -390,6 +390,8 @@ header {
 
 //START OF WORK SECTION BLOCK
 #work {
+    border-top: .0625rem solid $lightgrey;
+    border-bottom: .0625rem solid $lightgrey;    
     display: flex;
     flex-flow: row-reverse wrap;
     justify-content: center;
@@ -409,7 +411,7 @@ header {
         font-size: 1.25rem;
         padding: .5rem 1rem;
         margin: .75rem 0;
-        border:  .125rem solid $blue;
+        border:  .125rem solid $blue;   
         background-color: $lightgrey;
         border-color: $blue;
         font-family: 'Chakra Petch';

@@ -71,7 +71,6 @@ body {
 }
 
 section {
-  border-top: 0.0625rem solid #EEEEEE;
   padding: 3rem 8%;
 }
 
@@ -324,6 +323,10 @@ ul.open {
   }
 }
 
+.x {
+  position: fixed;
+}
+
 .x div:first-child {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
@@ -560,6 +563,8 @@ header .waterfallh2 {
 }
 
 #work {
+  border-top: 0.0625rem solid #EEEEEE;
+  border-bottom: 0.0625rem solid #EEEEEE;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
