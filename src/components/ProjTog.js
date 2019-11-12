@@ -38,16 +38,16 @@ class Toggle extends Component {
         } else {
             toggleRender =
             <div className="sub-sec work-toggle">
-                <svg width="30" height="30">
-                    <polygon fill={this.props.projState.topArrow} points="0,30 15,15 30,30" 
+                <svg width="50" height="50">
+                    <polygon fill={this.props.projState.topArrow} points="0,50 25,25 50,50" 
                     id="arrowBackward" arrow="backward" onClick={(e) => {this.props.toggleBack(e)}}/>
                 </svg>
 
                 <p>{this.props.projState.currentSlide} / {this.props.projState.totalSlides}</p>
                 
                 
-                <svg width="30" height="30">
-                    <polygon fill={this.props.projState.bottomArrow} points="0,0 15,15 30,0" 
+                <svg width="50" height="50">
+                    <polygon fill={this.props.projState.bottomArrow} points="0,0 25,25 50,0" 
                     id="arrowForward" arrow="forward" onClick={(e) => {this.props.toggleFwd(e)}}/>
                 </svg>
             </div>

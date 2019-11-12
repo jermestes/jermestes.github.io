@@ -10,19 +10,23 @@
 
 @-webkit-keyframes bounce {
   from {
-    padding-top: .5rem;
+    position: relative;
+    top: 0;
   }
   to {
-    padding-top: 0;
+    position: relative;
+    top: .5rem;
   }
 }
 
 @keyframes bounce {
   from {
-    padding-top: .5rem;
+    position: relative;
+    top: 0;
   }
   to {
-    padding-top: 0;
+    position: relative;
+    top: .5rem;
   }
 }
 
@@ -325,6 +329,9 @@ ul.open {
 
 .x {
   position: fixed;
+  right: 0;
+  top: 1.325rem;
+  bottom: 1.325rem;
 }
 
 .x div:first-child {
