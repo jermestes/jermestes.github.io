@@ -66,6 +66,7 @@ body {
 
 section {
     padding: 3rem 8%;
+    border-top: .1625rem solid $lightgrey;
 }
 
 .sub-sec {
@@ -402,8 +403,8 @@ header {
 //START OF WORK SECTION BLOCK
 #work {
     width: 100%;
-    border-top: .1625rem solid $lightgrey;
-    border-bottom: .1625rem solid $lightgrey;    
+    //border-top: .1625rem solid $lightgrey;
+    //border-bottom: .1625rem solid $lightgrey;    
     display: flex;
     flex-flow: row-reverse wrap;
     justify-content: center;

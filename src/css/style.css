@@ -76,6 +76,7 @@ body {
 
 section {
   padding: 3rem 8%;
+  border-top: 0.1625rem solid #EEEEEE;
 }
 
 @media screen and (min-width: 43.75rem) {
@@ -574,8 +575,6 @@ header .waterfallh2 {
 
 #work {
   width: 100%;
-  border-top: 0.1625rem solid #EEEEEE;
-  border-bottom: 0.1625rem solid #EEEEEE;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
