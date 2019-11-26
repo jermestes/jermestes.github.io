@@ -6,18 +6,21 @@ class Project extends Component {
         if(this.props.projState.length == 0) {
             projectRender = <div>loading</div>
         } else {
+            let currentProject = this.props.projects[this.props.projState.currentSlide-1];
             projectRender = 
             <div class="work-details">
-                <img className="sub-sec" src={this.props.projects[this.props.projState.currentSlide-1].imgSrc} alt={`${this.props.projects[this.props.projState.currentSlide-1].name} project`}></img>
+                <div className="work-img-container"> 
+                    <img className="sub-sec" src={currentProject.imgSrc} alt={`${currentProject.name} project`}></img>
+                </div>
+                
                 <div className="sub-sec" id="project-desc">
-                    <h2>{this.props.projects[this.props.projState.currentSlide-1].name}</h2>
-                    <p>{this.props.projects[this.props.projState.currentSlide-1].desc}</p>
+                    <h2>{currentProject.name}</h2>
+                    <p>{currentProject.desc}</p>
                     
-                    {this.props.projects[this.props.projState.currentSlide-1].liveLink === '' ? (null) : 
-                    (<a href={this.props.projects[this.props.projState.currentSlide-1].liveLink} target="_BLANK" rel="noopener noreferrer"> <button>View Live</button></a>)}
+                    <a href={currentProject.link1} target="_BLANK" rel="noopener noreferrer"> <button>{currentProject.linkTypes[0]}</button></a>
 
-                    {this.props.projects[this.props.projState.currentSlide-1].codeLink === '' ? (null) : 
-                    (<a href={this.props.projects[this.props.projState.currentSlide-1].codeLink} target="_BLANK" rel="noopener noreferrer"> <button>View Code</button></a>)}
+                    {currentProject.linkTypes[1] === null ? (null) : 
+                    (<a href={currentProject.link2} target="_BLANK" rel="noopener noreferrer"> <button>{currentProject.linkTypes[1]}</button></a>)}
                 </div>
             </div>
         }

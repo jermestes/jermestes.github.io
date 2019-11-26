@@ -117,6 +117,11 @@ p {
 }
 
 nav {
+  z-index: 90;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
   text-transform: uppercase;
   display: -ms-grid;
   display: grid;
@@ -140,6 +145,9 @@ nav li a:hover, nav li a:visited:hover {
 
 @media screen and (min-width: 56.25rem) {
   nav {
+    position: static;
+    width: auto;
+    top: auto;
     -ms-grid-rows: 3.75rem 3.75rem;
         grid-template-rows: 3.75rem 3.75rem;
     -ms-grid-columns: (1fr)[12];
@@ -182,9 +190,7 @@ nav li a:hover, nav li a:visited:hover {
   background-color: #EEEEEE;
   text-align: center;
   line-height: 3rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column wrap;
@@ -229,6 +235,7 @@ nav li a:hover, nav li a:visited:hover {
 }
 
 ul.open {
+  display: none;
   position: fixed;
   z-index: 30;
   right: 0;
@@ -262,13 +269,15 @@ ul.open {
 }
 
 .hamburger {
+  display: none;
   background-color: transparent;
-  width: auto;
   z-index: 40;
   cursor: pointer;
   -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
       align-self: center;
-  justify-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
   border: none;
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
@@ -276,9 +285,6 @@ ul.open {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
   grid-row: 1/3;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column nowrap;
@@ -328,10 +334,7 @@ ul.open {
 }
 
 .x {
-  position: fixed;
-  right: 0;
-  top: 1.325rem;
-  bottom: 1.325rem;
+  display: none;
 }
 
 .x div:first-child {
@@ -570,8 +573,9 @@ header .waterfallh2 {
 }
 
 #work {
-  border-top: 0.0625rem solid #EEEEEE;
-  border-bottom: 0.0625rem solid #EEEEEE;
+  width: 100%;
+  border-top: 0.1625rem solid #EEEEEE;
+  border-bottom: 0.1625rem solid #EEEEEE;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -585,16 +589,19 @@ header .waterfallh2 {
   color: #7b7879;
 }
 
-#work img {
+#work .work-img-container {
   width: 90%;
   max-width: 24.75rem;
 }
 
 @media screen and (min-width: 56.25rem) {
-  #work img {
-    max-width: none;
+  #work .work-img-container {
     width: 25rem;
   }
+}
+
+#work .work-img-container img {
+  width: 100%;
 }
 
 #work button {
@@ -770,7 +777,6 @@ header .waterfallh2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  justify-self: start;
   text-transform: capitalize;
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import IDM364 from '../assets/project-pics/idm364.svg';
-import IDM231 from '../assets/project-pics/idm231.PNG';
+import IDM231 from '../assets/project-pics/idm231.jpg';
 import IDM211 from '../assets/project-pics/idm211.PNG';
 import Vinyl from '../assets/project-pics/vinyl.png';
 import {Project, Toggle} from './ProjTog';
@@ -9,31 +9,35 @@ import {Project, Toggle} from './ProjTog';
 const projects = [
     {
         name: 'The BAKEd Sale',
-        desc: 'A real-time app for a fictitious food ordering service, where price and quantity can change at a moments notice. The app was built with ReactJS and uses Firebase for the backend data.', 
+        desc: 'A ReactJS webapp for a fictitious food ordering service. Users can place/edit orders as a customer and make changes to menu items as an admin. Changes in menu data are reflected in realtime via Firebase. Further details can be found at the Github repo link below.', 
         imgSrc: IDM364, 
-        liveLink: 'https://bakesale.jermestes.com',
-        codeLink: 'https://github.com/jermestes/idm364'
+        link1: 'https://bakesale.jermestes.com',
+        link2: 'https://github.com/jermestes/idm364-jje56',
+        linkTypes: ['View Live','View Code']
     } ,
     { 
         name: 'NBA Zodiac',
-        desc: 'The term project for my Scripting class was to create a custom zodiac web page based upon the Zodiac Algorithm. Users can enter a birth-date or choose a sign to see & hear a unique zodiac. This was coded in Vanilla JavaScript and images for the 12 signs were done in Adobe Photoshop.', 
+        desc: 'A web page that serves users a unique NBA player, message, and sound based on the sign chosen or birthdate entered. Coded in HTML, CSS, and Vanilla JS. Images edited in Adobe Photoshop. Further details can be found at the Github repo link below.', 
         imgSrc: IDM231,
-        liveLink: 'https://jermestes.com/idm231',
-        codeLink: 'https://github.com/jermestes/idm231'
+        link1: 'https://jermestes.com/idm231',
+        link2: 'https://github.com/jermestes/idm231-jje56',
+        linkTypes: ['View Live','View Code']
     } ,
     {
         name: 'iTunes Redesign',
-        desc: `My UI Design course's term project tasked us with making a prototype which redesigns the UI of an existing desktop website or application. I took a slightly different approach, by reimagining Apple's iTunes as a browser player that mirrors Apple Music on iPhone. The project was developed and deployed with AdobeXD.`,
+        desc: `The term project for my UI Design course was to make a prototype which redesigns the UI of an existing desktop site or application. I took a different approach, by reimagining Apple iTunes as a browser player that creates parity with Apple Music's iPhone app. Created and deployed with AdobeXD.`,
         imgSrc: IDM211,
-        liveLink: 'https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off',
-        codeLink: ''
+        link1: 'https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off',
+        link2: null,
+        linkTypes: ['View Demo',null]
     } ,
     {
         name: 'VinylDNS',
-        desc: `Drexel CCI Senior project, where our team worked to overhauled Comcast's VinylDNS web client. VinylDNS is a vendor-agnostic DNS management system. The team worked to recode the portal in ScalaJS (to match with the API) while also making the interface more user-friendly. I worked on UI prototyping and documentation. `,
+        desc: `Drexel CCI Senior project, where our team worked to overhaul the web client for Comcast's VinylDNS, a vendor-agnostic DNS management system. The team worked to recode the portal in ScalaJS (to match with the API) while also making the interface more user-friendly. I worked on UI prototyping and documentation. `,
         imgSrc: Vinyl,
-        liveLink: 'http://www.cci.drexel.edu/SeniorDesign/2018_2019/VinylDNS/index.html',
-        codeLink: ''
+        link1: 'http://www.cci.drexel.edu/SeniorDesign/2018_2019/VinylDNS/index.html',
+        link2: null,
+        linkTypes: ['More Info',null]
     }  
 ];
 
