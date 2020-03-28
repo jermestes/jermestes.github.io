@@ -25,7 +25,7 @@ const LinkList = () => {
 
 const Contact = () => {
     return (
-        <section id="contact">
+        <section id="contact" className="react-transition swipe-right">
             <h2>Learn More</h2>
             <LinkList />                                    
         </section>

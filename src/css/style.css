@@ -144,16 +144,23 @@ nav li a:hover, nav li a:visited:hover {
   border-bottom: 0.3125rem solid #75C4DB;
 }
 
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 43.75rem) {
   nav {
     position: static;
     width: auto;
     top: auto;
+    padding: 0;
     -ms-grid-rows: 3.75rem 3.75rem;
         grid-template-rows: 3.75rem 3.75rem;
+    -ms-grid-columns: 0.5fr (1fr)[10] 0.5fr;
+        grid-template-columns: 0.5fr repeat(10, 1fr) 0.5fr;
+  }
+}
+
+@media screen and (min-width: 56.25rem) {
+  nav {
     -ms-grid-columns: (1fr)[12];
         grid-template-columns: repeat(12, 1fr);
-    padding: 0;
   }
 }
 
@@ -173,7 +180,7 @@ nav li a:hover, nav li a:visited:hover {
   height: 4.75rem;
 }
 
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 43.75rem) {
   .nav-logo {
     height: 6.25rem;
     -ms-grid-column: 1;
@@ -209,7 +216,7 @@ nav li a:hover, nav li a:visited:hover {
   list-style: none;
 }
 
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 43.75rem) {
   .nav-links {
     -ms-grid-column: 4;
     -ms-grid-column-span: 8;
@@ -333,7 +340,7 @@ ul.open {
   width: 1.5rem;
 }
 
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 43.75rem) {
   .hamburger {
     display: none;
   }
@@ -376,7 +383,7 @@ ul.open {
   z-index: 10;
 }
 
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 43.75rem) {
   .nav-bottomhalf {
     background-color: white;
   }
@@ -552,11 +559,10 @@ header .waterfallh2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #373621;
-}
-
-#about p, #about h2, #about strong {
-  color: white;
+  min-height: calc(100vh - 7.5rem);
+  /*p, h2, strong {
+        color: white;
+    }*/
 }
 
 #about strong:hover {

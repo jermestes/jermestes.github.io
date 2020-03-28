@@ -134,13 +134,18 @@ nav {
             border-bottom: .3125rem solid $blue;
         } 
     }
-    @media screen and (min-width: $nowDesktop) {
+    @media screen and (min-width: $nowTablet) {
         position: static;
         width: auto;
         top: auto;
-        grid-template-rows: 3.75rem 3.75rem;  
-        grid-template-columns: repeat(12,1fr);
         padding: 0;
+        grid-template-rows: 3.75rem 3.75rem;
+        grid-template-columns: .5fr repeat(10,1fr) .5fr;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        //grid-template-rows: 3.75rem 3.75rem;  
+        grid-template-columns: repeat(12,1fr);
+        
     }
 }
 
@@ -151,7 +156,7 @@ nav {
     grid-column: 2/3;
     grid-row: 1/3;
     height: 4.75rem;
-    @media screen and (min-width: $nowDesktop) {
+    @media screen and (min-width: $nowTablet) {
         height: 6.25rem;
         grid-column: 1/4;
         grid-row: 1/3;
@@ -174,7 +179,7 @@ nav {
     right: -100vw;
     text-transform: uppercase;
     list-style: none;
-    @media screen and (min-width: $nowDesktop){
+    @media screen and (min-width: $nowTablet){
         grid-column: 4/12;
         grid-row: 1/2;
         display: grid;
@@ -250,7 +255,7 @@ ul.open {
         transform-origin: bottom right;
         width: 1.5rem;
     }
-    @media screen and (min-width: $nowDesktop) {
+    @media screen and (min-width: $nowTablet) {
         display: none;
     }
 }
@@ -283,7 +288,7 @@ ul.open {
     grid-column: 1/13;
     grid-row: 2/3;
     z-index: 10;
-    @media screen and (min-width: $nowDesktop) {
+    @media screen and (min-width: $nowTablet) {
         background-color: white;
     }
 }//END OF NAV BAR BLOCK
@@ -396,10 +401,11 @@ header {
     flex-flow: row wrap;
     justify-content: center;
     align-items: center;
-    background-color: #373621;
-    p, h2, strong {
+    min-height: calc(100vh - 7.5rem);
+    //background-color: #373621;
+    /*p, h2, strong {
         color: white;
-    }
+    }*/
     strong:hover {
         color: $blue;
     }
