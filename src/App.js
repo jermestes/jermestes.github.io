@@ -1,23 +1,16 @@
 import React from 'react';
+import {BrowserRouter as Router} from 'react-router-dom';
 import Nav from './components/Nav';
-import Landing from './components/Landing';
-import About from './components/About';
-import Work from './components/Work';
-import Contact from './components/Contact';
+import Main from './components/Main';
 import './css/style.css';
 
 const App = () => {
     return (
-        <React.Fragment>
+        <Router>
             <Nav />
-            <Landing />
-            <main>
-                <About />
-                <Work />
-                <Contact />
-            </main>
+            <Main />
             <footer>© 2019 Jeremy Estes</footer>
-        </React.Fragment>
+        </Router>
     );
 };
 
