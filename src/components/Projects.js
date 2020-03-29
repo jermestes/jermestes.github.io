@@ -1,6 +1,6 @@
 import React from 'react';
 import IDM364 from '../assets/project-pics/idm364.svg';
-import IDM231 from '../assets/project-pics/idm231.jpg';
+import IDM231 from '../assets/project-pics/durant.jpg';
 import IDM211 from '../assets/project-pics/idm211.PNG';
 import Vinyl from '../assets/project-pics/vinyl.png';
 

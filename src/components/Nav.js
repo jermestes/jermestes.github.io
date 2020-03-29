@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
-import Pdf from '../assets/jeremyestes_resume.pdf';
 import LogoPic from '../assets/logo.png';
 
 class Nav extends Component {
@@ -27,7 +26,7 @@ class Nav extends Component {
                 <ul className="nav-links">
                     <li><NavLink to="/about" activeClassName="active" className="nav-link aboutLink">About</NavLink></li>
                     <li><NavLink to="/work" activeClassName="active" className="nav-link workLink">Projects</NavLink></li>
-                    <li><a href={Pdf} className="nav-link resumeLink" target="_BLANK" rel="noopener noreferrer" >Resume</a></li>
+                    <li><NavLink to="/resume" activeClassName="active" className="nav-link workLink">Resume</NavLink></li>
                     <li><NavLink to="/contact" activeClassName="active" className="nav-link contactLink">Contact</NavLink></li>
                 </ul>
                 

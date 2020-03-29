@@ -1,5 +1,6 @@
 import React from 'react';
 import Aboutpic from '../assets/BMoviePoster-cropped.jpg';
+import {Link} from 'react-router-dom';
 
 const About = () => {
     return (
@@ -11,7 +12,11 @@ const About = () => {
                     <p>
                         My name is Jeremy, but most just call me Jerm.
                         I'm a web developer from Philadelphia, with an all-around IT background.
+                        
                     </p>
+                    <Link to="/work">See my projects</Link><br></br>
+                    <Link to="/resume">See my resume</Link><br></br>
+                    <Link to="/contact">Get in touch with me</Link><br></br>
                 </div> 
             </div>
         </section>
