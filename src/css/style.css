@@ -30,6 +30,12 @@
   }
 }
 
+@media screen and (min-width: 43.75rem) {
+  header, #about, #work, #contact {
+    padding: 1.5rem 0 3rem 0;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -141,7 +147,10 @@ nav li a, nav li a:visited {
 }
 
 nav li a:hover, nav li a:visited:hover {
-  border-bottom: 0.3125rem solid #75C4DB;
+  color: #276A84;
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #276A84;
+          text-decoration-color: #276A84;
 }
 
 @media screen and (min-width: 43.75rem) {
@@ -242,6 +251,13 @@ nav li a:hover, nav li a:visited:hover {
     width: inherit;
     line-height: inherit;
   }
+}
+
+.nav-links .active {
+  color: #276A84;
+  text-decoration: line-through;
+  -webkit-text-decoration-color: #276A84;
+          text-decoration-color: #276A84;
 }
 
 ul.open {
@@ -419,12 +435,6 @@ header .waterfallh2 {
   font-weight: 500;
 }
 
-@media screen and (min-width: 43.75rem) {
-  header {
-    padding: 1.5rem 0 3rem 0;
-  }
-}
-
 @media screen and (min-width: 56.25rem) {
   header {
     min-height: calc(100vh - 7.5rem);
@@ -546,6 +556,10 @@ header .waterfallh2 {
 }
 
 #about {
+  min-height: calc(100vh - 7.5rem);
+}
+
+#about .about-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -559,14 +573,10 @@ header .waterfallh2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: calc(100vh - 7.5rem);
-  /*p, h2, strong {
-        color: white;
-    }*/
 }
 
 #about strong:hover {
-  color: #75C4DB;
+  color: #276A84;
 }
 
 #about img, #about .about-text {
@@ -586,10 +596,13 @@ header .waterfallh2 {
 }
 
 #about a:hover, #about a:visited:hover {
-  color: #75C4DB;
+  color: #276A84;
 }
 
 #work {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -604,8 +617,14 @@ header .waterfallh2 {
   color: #7b7879;
 }
 
+#work h1 {
+  color: #7b7879;
+  text-align: center;
+  font-size: 2rem;
+}
+
 #work .work-img-container {
-  width: 90%;
+  width: 100%;
   max-width: 24.75rem;
 }
 
@@ -619,40 +638,16 @@ header .waterfallh2 {
   width: 100%;
 }
 
-#work button {
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 1.25rem;
-  padding: .5rem 1rem;
-  margin: .75rem 0;
-  border: 0.125rem solid #75C4DB;
-  background-color: #EEEEEE;
-  border-color: #75C4DB;
-  font-family: 'Chakra Petch';
-  text-transform: uppercase;
-}
-
-#work button:hover {
-  background-color: white;
-}
-
 @media screen and (min-width: 56.25rem) {
-  #work {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-flow: row-reverse nowrap;
-            flex-flow: row-reverse nowrap;
+  #work .work-img-container img {
+    width: auto;
+    max-width: 100%;
+    height: 16rem;
   }
 }
 
-.work-toggle {
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  background-color: white;
-  width: 100%;
-  padding: .5rem 0;
+#work .work-btns {
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -660,12 +655,47 @@ header .waterfallh2 {
   -webkit-box-direction: normal;
       -ms-flex-flow: row wrap;
           flex-flow: row wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+#work button {
+  text-align: center;
+  cursor: pointer;
+  width: auto;
+  font-size: .875rem;
+  padding: .5rem;
+  margin: .75rem 1rem 0 0;
+  border: 0.125rem solid #276A84;
+  background-color: white;
+  border-color: #276A84;
+  color: #276A84;
+  font-family: 'Chakra Petch';
+}
+
+#work button:hover {
+  background-color: #276A84;
+  color: white;
+}
+
+@media screen and (min-width: 56.25rem) {
+  #work {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse wrap;
+            flex-flow: row-reverse wrap;
+  }
+}
+
+.work-toggle {
+  display: none;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  padding: .5rem 0;
 }
 
 .work-toggle p {
@@ -676,6 +706,9 @@ header .waterfallh2 {
 
 @media screen and (min-width: 56.25rem) {
   .work-toggle p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     padding: 1rem 0;
   }
 }
@@ -696,20 +729,26 @@ header .waterfallh2 {
 
 @media screen and (min-width: 56.25rem) {
   .work-toggle {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-shadow: none;
             box-shadow: none;
     padding: 0;
     background-color: transparent;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column wrap;
-            flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+        flex-flow: column wrap;
     border: none;
     width: auto;
     bottom: auto;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
     -ms-grid-column-align: start;
         justify-self: start;
     -ms-flex-item-align: start;
@@ -727,22 +766,7 @@ header .waterfallh2 {
 }
 
 .work-details {
-  min-height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-flow: row-reverse wrap;
-          flex-flow: row-reverse wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-}
-
-.work-details div {
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -753,14 +777,30 @@ header .waterfallh2 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: .75rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 2.1875rem 0;
+  border-bottom: 1px solid #747272;
 }
 
-@media screen and (min-width: 43.75rem) {
+.work-details .project-desc {
+  font-size: .875rem;
+  line-height: 2.25rem;
+}
+
+.work-details .project-name {
+  font-size: 1.75rem;
+  color: #276A84;
+}
+
+.work-details:last-child {
+  border: none;
+}
+
+@media (min-width: 56.25rem) {
   .work-details {
-    padding: 0 1rem;
-    -ms-grid-column-align: start;
-        justify-self: start;
+    width: auto;
+    border: none;
   }
 }
 
@@ -839,5 +879,46 @@ footer {
   background-color: #EEEEEE;
   text-align: center;
   width: 100%;
+}
+
+@media (min-width: 56.25rem) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1.5fr 10fr .5fr;
+        grid-template-columns: 1.5fr 10fr .5fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+}
+
+.projects-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 56.25rem) {
+  .projects-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
 }
 /*# sourceMappingURL=style.css.map */

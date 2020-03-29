@@ -36,13 +36,23 @@
 $lightgrey: #EEEEEE;
 $darkgrey: #7b7879;
 $pink: #E4C8C4;
-$blue: #75C4DB;
+$blue: #276A84;
 $gold:#ccb37a;
 $green: #00993a;
 $nowTablet: 43.75rem; //700px
 $nowDesktop: 56.25rem; //900px
 $nowLargeDesktop: 85.375rem; //1440px
 $nowTV: 120rem; //1920px
+
+@mixin main-sec-spacing {
+    @media screen and (min-width: $nowTablet) {
+        padding: 1.5rem 0 3rem 0;
+    }    
+}
+
+header, #about, #work, #contact {
+    @include main-sec-spacing;
+} 
 
 * {
     box-sizing: border-box;
@@ -131,7 +141,9 @@ nav {
         font-family: 'Chakra Petch', sans-serif; 
         text-decoration: none;
         &:hover {
-            border-bottom: .3125rem solid $blue;
+            color: $blue;
+            text-decoration: line-through;
+            text-decoration-color: $blue;
         } 
     }
     @media screen and (min-width: $nowTablet) {
@@ -194,6 +206,11 @@ nav {
         height: auto;
         width: inherit;
         line-height: inherit;
+    }
+    .active {
+        color: $blue;
+        text-decoration: line-through;
+        text-decoration-color: $blue;
     }
 }
 
@@ -312,9 +329,6 @@ header {
         font-size: 1.5rem;
         font-weight: 500;
     }
-    @media screen and (min-width: $nowTablet) {
-        padding: 1.5rem 0 3rem 0;
-    }
     @media screen and (min-width: $nowDesktop) {
         min-height: calc(100vh - 7.5rem);
         flex-flow: row wrap;
@@ -397,15 +411,13 @@ header {
 
 //START OF ABOUT SECTION BLOCK
 #about {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     min-height: calc(100vh - 7.5rem);
-    //background-color: #373621;
-    /*p, h2, strong {
-        color: white;
-    }*/
+    .about-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
     strong:hover {
         color: $blue;
     }
@@ -427,60 +439,76 @@ header {
 
 //START OF WORK SECTION BLOCK
 #work {
+    grid-column: 2/3;
     width: 100%;
-    //border-top: .1625rem solid $lightgrey;
-    //border-bottom: .1625rem solid $lightgrey;    
     display: flex;
     flex-flow: row-reverse wrap;
     justify-content: center;
     color: $darkgrey;
+    h1 {
+        color: $darkgrey;
+        text-align: center;
+        font-size: 2rem;
+    }
     .work-img-container {
-        width: 90%;
+        width: 100%;
         max-width: 24.75rem;
         @media screen and (min-width: $nowDesktop) {
             width: 25rem;
         }
         img {
             width: 100%;
+            @media screen and (min-width: $nowDesktop) {
+                width: auto;
+                max-width: 100%;
+                height: 16rem;
+            }
         }  
     } 
+
+    .work-btns {
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: start;
+    }
 
     button {
         text-align: center;
         cursor: pointer;
-        width: 100%;
-        font-size: 1.25rem;
-        padding: .5rem 1rem;
-        margin: .75rem 0;
+        width: auto;
+        font-size: .875rem;
+        padding: .5rem;
+        margin: .75rem 1rem 0 0;
         border:  .125rem solid $blue;   
-        background-color: $lightgrey;
+        background-color: white;
         border-color: $blue;
+        color: $blue;
         font-family: 'Chakra Petch';
-        text-transform: uppercase;
+        //text-transform: uppercase;
         &:hover {
-            background-color: white;
+            background-color: $blue;
+            color: white;
         }
     }
     @media screen and (min-width: $nowDesktop) {
-        flex-flow: row-reverse nowrap;
+        flex-flow: row-reverse wrap;
     }
 }
 
 .work-toggle {
+    display: none;
     position: sticky;
     bottom: 0;
     background-color: white;
     width: 100%;
     padding: .5rem 0;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
     p {
         display: block;
         padding: 0 2rem;
         margin: auto 0;
         @media screen and (min-width: $nowDesktop) {
+            display: flex;
             padding: 1rem 0;
         }
     }
@@ -494,6 +522,10 @@ header {
         cursor: pointer;
     }
     @media screen and (min-width: $nowDesktop) {
+        //display: flex;     
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
         box-shadow: none;
         padding: 0;
         background-color: transparent;
@@ -514,20 +546,27 @@ header {
 }
 
 .work-details {
-    min-height: 100%;
+    width: 80%;
     display: flex;
-    flex-flow: row-reverse wrap;
+    flex-flow: column wrap;
     justify-content: center;
     align-content: center;
-    div {
-        display: flex;
-        flex-flow: column wrap;
-        justify-content: center;
-        padding: .75rem;
+    padding: 2.1875rem 0;
+    border-bottom: 1px solid #747272;
+    .project-desc {
+        font-size: .875rem;
+        line-height: 2.25rem;
     }
-    @media screen and (min-width: $nowTablet) {
-        padding: 0 1rem;
-        justify-self: start;
+    .project-name {
+        font-size: 1.75rem;
+        color: $blue;
+    }
+    &:last-child {
+        border: none;
+    }
+    @media (min-width: $nowDesktop) {
+        width: auto;
+        border: none;
     }
 }//END OF WORK SECTION BLOCK
 
@@ -579,4 +618,24 @@ footer {
     background-color: $lightgrey;
     text-align: center;
     width: 100%;
+}
+
+main {
+    @media (min-width: $nowDesktop) {
+        display: grid;
+        grid-template-columns: 1.5fr 10fr .5fr;
+        grid-template-rows: auto;
+    }
+}
+
+.projects-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: $nowDesktop) {
+        display: flex;
+        justify-content: flex-start;
+        align-items: start;
+    }
 }

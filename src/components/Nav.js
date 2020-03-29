@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import Pdf from '../assets/jeremyestes_resume.pdf';
 import LogoPic from '../assets/logo.png';
 
@@ -16,7 +16,7 @@ class Nav extends Component {
     render() {
         return (
             <nav>
-                <Link to="/" className="nav-logo"><img className="nav-logo" src={LogoPic} alt="Site Logo"/></Link>
+                <NavLink to="/" className="nav-logo"><img className="nav-logo" src={LogoPic} alt="Site Logo"/></NavLink>
 
                 <button className="hamburger" onClick={this.mobileAction}>
                     <div></div>  
@@ -25,10 +25,10 @@ class Nav extends Component {
                 </button>
 
                 <ul className="nav-links">
-                    <li><Link to="/about" className="nav-link aboutLink">About</Link></li>
-                    <li><Link to="/work" className="nav-link workLink">Work</Link></li>
+                    <li><NavLink to="/about" activeClassName="active" className="nav-link aboutLink">About</NavLink></li>
+                    <li><NavLink to="/work" activeClassName="active" className="nav-link workLink">Projects</NavLink></li>
                     <li><a href={Pdf} className="nav-link resumeLink" target="_BLANK" rel="noopener noreferrer" >Resume</a></li>
-                    <li><Link to="/contact" className="nav-link contactLink">Contact</Link></li>
+                    <li><NavLink to="/contact" activeClassName="active" className="nav-link contactLink">Contact</NavLink></li>
                 </ul>
                 
                 <div className="nav-background nav-tophalf" />
