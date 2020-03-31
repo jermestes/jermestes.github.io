@@ -634,7 +634,24 @@ main {
     }
 }
 
-header {
+.app-wrap {
+    aside {
+        display: none;
+    }
+    @media (min-width: $nowDesktop) {
+        display: grid;
+        grid-template: auto / 1fr 10fr 1fr;
+        align-content: start;
+        justify-items: center;
+        aside {
+            display: block;
+            align-self: center;
+            justify-self: end;
+        }
+    }
+}
+
+
     #intro-block {
         display: flex;
         flex-flow: column-reverse;
@@ -653,17 +670,9 @@ header {
         }
     }
     @media (min-width: $nowDesktop) {
-        display: grid;
-        grid-template: auto / 1.5fr 9fr 1.5fr;
-        align-content: start;
-        justify-items: center;
         #intro-block {
             flex-flow: row wrap;
             align-content: flex-start;
             justify-content: center;
         }
-        aside {
-            align-self: center;
-        }
     }
-}
