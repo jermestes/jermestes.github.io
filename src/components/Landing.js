@@ -2,11 +2,14 @@ import React from 'react';
 import Hero from '../assets/hero.jpg';
 import Hero_wide from '../assets/hero-wide.jpg';
 import {Link} from 'react-router-dom';
+import LinkList from './Contact';
 
 const Landing = () => {
     return (
         <header className="react-transition fade-in">
-            <div className="sub-sec header-waterfall">
+            <aside><LinkList /></aside>
+            <div id="intro-block">
+                <div className="sub-sec header-waterfall">
                 <h1>Jerm Estes</h1>
                 <h2 className="waterfallh2">Web developer<br />Designer<br />Creator</h2>
                 <Link to="/about">
@@ -19,6 +22,8 @@ const Landing = () => {
                 <source media="(max-width: 700px)" srcSet={Hero_wide} />
                 <img src={Hero_wide} className="header-picture-img" alt="Jerm dribbling while coding" />
             </picture>
+            </div>
+            
             
         </header>
     );

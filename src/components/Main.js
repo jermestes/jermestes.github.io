@@ -13,7 +13,6 @@ const Main = () => {
             <Route path="/about" component={About} />
             <Route path="/work" component={Work} />
             <Route path="/resume" component={Resume} />
-            <Route path="/contact" component={Contact}/>
         </Switch>
     )
 }

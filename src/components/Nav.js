@@ -17,17 +17,10 @@ class Nav extends Component {
             <nav>
                 <NavLink to="/" className="nav-logo"><img className="nav-logo" src={LogoPic} alt="Site Logo"/></NavLink>
 
-                <button className="hamburger" onClick={this.mobileAction}>
-                    <div></div>  
-                    <div></div>  
-                    <div></div>                
-                </button>
-
                 <ul className="nav-links">
                     <li><NavLink to="/about" activeClassName="active" className="nav-link aboutLink">About</NavLink></li>
                     <li><NavLink to="/work" activeClassName="active" className="nav-link workLink">Projects</NavLink></li>
                     <li><NavLink to="/resume" activeClassName="active" className="nav-link workLink">Resume</NavLink></li>
-                    <li><NavLink to="/contact" activeClassName="active" className="nav-link contactLink">Contact</NavLink></li>
                 </ul>
                 
                 <div className="nav-background nav-tophalf" />
