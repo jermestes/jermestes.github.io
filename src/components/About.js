@@ -24,16 +24,16 @@ let aboutList = [
 
 const About = () => {
     return (
-        <main className="react-transition swipe-up">
+        <section className="react-transition swipe-up">
             <h1>About Me</h1>
-            <section id="about">
+            <div id="about">
                 {aboutList.map(block => {
                     return(
                         <AboutBlock image={block.image} opener={block.opener} body={block.body} />
                     )
                 })}
-            </section> 
-        </main>
+            </div> 
+        </section>
         
     );
 };

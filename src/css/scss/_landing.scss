@@ -22,9 +22,12 @@
 
 //START OF HEADER(LANDING) BLOCK
 header {
+    position: relative;
+    bottom: 2.65rem;
     min-height: calc(100vh + 2rem);
-    @media screen and (min-width: $nowDesktop) {
+    @media screen and (min-width: $nowTablet) {
         min-height: calc(100vh - 7.5rem);
+        position: static;
     }
     @media screen and (orientation: portrait) and (min-width: $nowDesktop){
         height: 100vh;

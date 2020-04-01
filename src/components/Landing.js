@@ -12,12 +12,15 @@ const Landing = () => {
             <aside>
                 <LinkList />
             </aside>
-            <Switch>
-                <Route path="/" exact component={Intro}/>
-                <Route path="/about" component={About} />
-                <Route path="/work" component={Work} />
-                <Route path="/resume" component={Resume} />
-            </Switch>
+
+            <main>
+                <Switch>
+                    <Route path="/" exact component={Intro}/>
+                    <Route path="/about" component={About} />
+                    <Route path="/work" component={Work} />
+                    <Route path="/resume" component={Resume} />
+                </Switch>
+            </main>
         </div>
     );
 };

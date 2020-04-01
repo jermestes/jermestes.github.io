@@ -28,18 +28,6 @@ header, #about, #work, #contact {
 html {
     font-size: 100%;
     scroll-behavior: smooth;
-    /*@media screen and (min-width: $nowLargeDesktop){
-        font-size: 120%;
-    }
-    @media screen and (orientation: portrait) and (min-width: $nowTablet) {
-        font-size: 125%;
-    }
-    @media screen and (min-width: $nowTV) {
-        font-size: 150%;
-    }
-    @media screen and (orientation: portrait) and (min-width: $nowDesktop) {
-        font-size: 150%;
-    }*/
 }
 
 body {
@@ -47,17 +35,6 @@ body {
     background-color: white;
     line-height: 3rem;
     display: block;
-}
-
-/*section {
-    padding: 3rem 8%;
-    border-top: .1625rem solid $lightgrey;
-}
-*/
-.sub-sec {
-    @media screen and (min-width: $nowTablet) {
-        margin: 0 1rem;
-    }
 }
 
 h6,h5,h4,h3,h2,h1{
@@ -89,6 +66,10 @@ p {
 }
 
 main {
+    section {
+        padding: 1.5rem 5%;
+    }
+    
     h1 {
         background-color: $green;
         display: inline-block;
@@ -102,7 +83,10 @@ main {
     aside {
         min-height: calc(100vh - 7.5rem);
         ul {
-            position: fixed;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            //position: fixed;
             li {
                 margin: .5rem 1rem;
             }
