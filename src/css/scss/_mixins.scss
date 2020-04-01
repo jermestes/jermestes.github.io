@@ -1,0 +1,17 @@
+$lightgrey: #EEEEEE;
+$darkgrey: #7b7879;
+$pink: #E4C8C4;
+$blue: #276A84;
+$gold:#ccb37a;
+$green: #C8E8CC;
+$midnight-green: #004953;
+$nowTablet: 43.75rem; //700px
+$nowDesktop: 56.25rem; //900px
+$nowLargeDesktop: 85.375rem; //1440px
+$nowTV: 120rem; //1920px
+
+@mixin main-sec-spacing {
+    @media screen and (min-width: $nowTablet) {
+        padding: 1.5rem 0 3rem 0;
+    }    
+}

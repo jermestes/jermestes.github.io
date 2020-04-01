@@ -1,0 +1,14 @@
+#resume {
+    h2 {
+        color: $blue;
+    }
+    .job {
+        color: $darkgrey;
+        margin-bottom: 2rem; 
+    }
+    .job-description {
+        padding-left: .5rem;
+        margin-left: 1.25rem;
+        list-style-type: disc;
+    }
+}

@@ -13,7 +13,7 @@ const Landing = () => {
                 <LinkList />
             </aside>
             <Switch>
-                <Route path="/" exact component={Intro} className="react-transition fade-in"/>
+                <Route path="/" exact component={Intro}/>
                 <Route path="/about" component={About} />
                 <Route path="/work" component={Work} />
                 <Route path="/resume" component={Resume} />

@@ -4,10 +4,10 @@ import Projects from './Projects';
 class Work extends Component {
     render() {
         return (
-            <section id="work">
-                <h2>Projects</h2>
+            <main id="work">
+                <h1>Projects</h1>
                 <Projects />
-            </section>
+            </main>
         );
     }
 }

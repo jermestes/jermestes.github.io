@@ -1,0 +1,60 @@
+//START OF CONTACT SECTION BLOCK
+#contact {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    color: black;
+    a, a:visited {
+        text-decoration: none;
+    }
+    ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center; 
+        text-transform: capitalize;
+        li {
+            padding: 1.5rem;
+            a {
+                text-decoration: none;
+            }
+        }
+        @media screen and (min-width: $nowDesktop) {
+            display: block;
+            padding: 0 .5rem 0 0;
+        }
+    }
+}
+.profile_links {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    color: black;
+    img {
+        margin: 0 .5rem 3rem 0;
+        width: 3.125rem;
+    }
+    :visited {
+        color: black;
+    }
+}//END OF CONTACT SECTION BLOCK
+
+//THE FOOTER BLOCK...END OF FILE
+footer {
+    font-family: 'Chakra Petch', sans-serif;
+    color: black;
+    background-color: $lightgrey;
+    text-align: center;
+    width: 100%;
+}
+
+.projects-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    @media (min-width: $nowDesktop) {
+        display: flex;
+        justify-content: space-around;
+        align-items: start;
+    }
+}

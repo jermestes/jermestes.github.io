@@ -1,0 +1,129 @@
+//START OF WORK SECTION BLOCK
+#work {
+    grid-column: 2/3;
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: center;
+    color: $darkgrey;
+    .work-img-container {
+        width: 100%;
+        max-width: 24.75rem;
+        @media screen and (min-width: $nowDesktop) {
+            width: 25rem;
+        }
+        img {
+            width: 100%;
+            @media screen and (min-width: $nowDesktop) {
+                width: auto;
+                max-width: 100%;
+                height: 16rem;
+            }
+        }  
+    } 
+
+    .work-btns {
+        padding: 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: start;
+    }
+
+    button {
+        text-align: center;
+        cursor: pointer;
+        width: auto;
+        font-size: .875rem;
+        padding: .5rem;
+        margin: .75rem 1rem 0 0;
+        border:  .125rem solid $blue;   
+        background-color: white;
+        border-color: $blue;
+        color: $blue;
+        font-family: 'Chakra Petch';
+        //text-transform: uppercase;
+        &:hover {
+            background-color: $blue;
+            color: white;
+        }
+    }
+    @media screen and (min-width: $nowDesktop) {
+        flex-flow: row-reverse wrap;
+    }
+}
+
+.work-toggle {
+    display: none;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    padding: .5rem 0;
+    p {
+        display: block;
+        padding: 0 2rem;
+        margin: auto 0;
+        @media screen and (min-width: $nowDesktop) {
+            display: flex;
+            padding: 1rem 0;
+        }
+    }
+    svg:first-child {
+            transform: rotate(-90deg);
+        }
+    svg:nth-child(3) {
+        transform: rotate(-90deg);
+    }
+    svg {
+        cursor: pointer;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        //display: flex;     
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+        padding: 0;
+        background-color: transparent;
+        flex-flow: column wrap;
+        border: none;
+        width: auto;
+        bottom: auto;
+        justify-content: center;
+        justify-self: start;
+        align-self: start;
+        svg:first-child {
+            transform: rotate(0deg);
+        }
+        svg:nth-child(3) {
+            transform: rotate(0deg);
+        }   
+    }
+}
+
+.work-details {
+    width: 80%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    padding: 2.1875rem 0;
+    border-bottom: 1px solid #747272;
+    .project-desc {
+        font-size: .875rem;
+        line-height: 2.25rem;
+    }
+    .project-name {
+        font-size: 1.75rem;
+        color: $blue;
+    }
+    &:last-child {
+        border: none;
+    }
+    @media (min-width: $nowDesktop) {
+        width: auto;
+        border: none;
+        padding: 0;
+        margin: 0 .5rem 6rem;
+    }
+}//END OF WORK SECTION BLOCK

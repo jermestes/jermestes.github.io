@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 const Intro = () => {
   return (
-    <header id="intro-block">
+    <header id="intro-block" className="react-transition fade-in">
         <div className="sub-sec header-waterfall">
             <h1>Jerm Estes</h1>
             <h2 className="waterfallh2">Web developer<br />Designer<br />Creator</h2>

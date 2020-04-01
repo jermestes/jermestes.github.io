@@ -1,0 +1,126 @@
+@keyframes bounce {
+    from {
+        position: relative;
+        top: 0;
+    }
+    to {
+        position: relative;
+        top: .5rem;
+    }
+}
+
+@-webkit-keyframes bounce {
+    from {
+        position: relative;
+        top: 0;
+    }
+    to {
+        position: relative;
+        top: .5rem;
+    }
+}
+
+//START OF HEADER(LANDING) BLOCK
+header {
+    min-height: calc(100vh + 2rem);
+    @media screen and (min-width: $nowDesktop) {
+        min-height: calc(100vh - 7.5rem);
+    }
+    @media screen and (orientation: portrait) and (min-width: $nowDesktop){
+        height: 100vh;
+        flex-flow: column-reverse;
+        align-content: center;
+        justify-content: flex-end;
+    }
+}
+
+//the title text that goes beside/underneath hero pic
+.header-waterfall {
+    text-align: center;
+    z-index: 25;
+    align-self: center;
+    line-height: 3rem;
+    padding: 2rem 0;
+    @media screen and (min-width: $nowTablet) {
+        display: block;
+        padding-top: 2.5rem;
+    }
+    @media screen and (min-width: $nowDesktop) {
+        text-align: right;
+        align-self: start;
+        padding: 0 1rem 0 0;
+    }  
+    @media screen and (orientation: portrait) {
+        text-align: center;
+        align-self: inherit;
+        padding: 2rem 0;
+    }
+}
+
+.header-picture {
+    @media screen and (min-width: $nowTablet) {
+        height: 25rem;
+    }
+    img {
+        width: 100%;
+        @media screen and (min-width: $nowTablet) {
+            width: 22.5rem;
+        }
+    }
+}
+
+.header-chevron {
+    animation: bounce 600ms ease-in-out 600ms infinite alternate;
+    -webkit-animation: bounce 600ms ease-in-out 600ms infinite alternate;
+    background-color: transparent;
+    border: none;
+    padding-top: .5rem;
+    span {
+        cursor: pointer;
+        height: 3.125rem;
+        width: 3.125rem;
+        border: solid grey;
+        border-width: 0 .3125rem .3125rem 0;
+        display: inline-block;
+        transform: rotate(45deg);
+        text-align: right;
+        &::after {
+            height: 3.125rem;
+            width: 3.125rem;
+            margin: .625rem;
+            content: '';
+            border: solid grey;
+            border-width: 0 .3125rem .3125rem 0;
+            display: inline-block;
+            text-align: right;
+        }
+    }
+    @media screen and (orientation: landscape) {
+        padding-right: .5rem;
+    }
+}//END OF HEADER(LANDING) BLOCK
+
+#intro-block {
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    h1 {
+        text-transform: uppercase;
+        background-color: $pink;
+        display: inline-block;
+        font-size: 2.5rem;
+    }
+    .waterfallh2 {
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+}
+@media (min-width: $nowDesktop) {
+    #intro-block {
+        flex-flow: row wrap;
+        align-content: flex-start;
+        justify-content: center;
+    }
+}
