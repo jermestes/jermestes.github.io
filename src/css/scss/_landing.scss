@@ -29,6 +29,11 @@ header {
         min-height: calc(100vh - 7.5rem);
         position: static;
     }
+    @media screen and (min-width: $nowDesktop) {
+        .sub-sec {
+            margin: 0 1rem;
+        }
+    }
     @media screen and (orientation: portrait) and (min-width: $nowDesktop){
         height: 100vh;
         flex-flow: column-reverse;
@@ -119,6 +124,7 @@ header {
         font-size: 1.5rem;
         font-weight: 500;
     }
+    @include main-sec-spacing;
 }
 @media (min-width: $nowDesktop) {
     #intro-block {

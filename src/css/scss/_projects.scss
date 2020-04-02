@@ -1,14 +1,11 @@
 //START OF WORK SECTION BLOCK
 #work {
-    grid-column: 2/3;
-    width: 100%;
-    display: flex;
-    flex-flow: row-reverse wrap;
-    justify-content: center;
+    //text-align: center;
     color: $darkgrey;
     .work-img-container {
         width: 100%;
         max-width: 24.75rem;
+        text-align: center;
         @media screen and (min-width: $nowDesktop) {
             width: 25rem;
         }
@@ -18,6 +15,7 @@
                 width: auto;
                 max-width: 100%;
                 height: 16rem;
+                padding: 0 1.25rem
             }
         }  
     } 
@@ -30,6 +28,7 @@
     }
 
     button {
+        z-index: 999;
         text-align: center;
         cursor: pointer;
         width: auto;
@@ -47,62 +46,9 @@
             color: white;
         }
     }
-    @media screen and (min-width: $nowDesktop) {
-        flex-flow: row-reverse wrap;
-    }
-}
-
-.work-toggle {
-    display: none;
-    position: sticky;
-    bottom: 0;
-    background-color: white;
-    width: 100%;
-    padding: .5rem 0;
-    p {
-        display: block;
-        padding: 0 2rem;
-        margin: auto 0;
-        @media screen and (min-width: $nowDesktop) {
-            display: flex;
-            padding: 1rem 0;
-        }
-    }
-    svg:first-child {
-            transform: rotate(-90deg);
-        }
-    svg:nth-child(3) {
-        transform: rotate(-90deg);
-    }
-    svg {
-        cursor: pointer;
-    }
-    @media screen and (min-width: $nowDesktop) {
-        //display: flex;     
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
-        box-shadow: none;
-        padding: 0;
-        background-color: transparent;
-        flex-flow: column wrap;
-        border: none;
-        width: auto;
-        bottom: auto;
-        justify-content: center;
-        justify-self: start;
-        align-self: start;
-        svg:first-child {
-            transform: rotate(0deg);
-        }
-        svg:nth-child(3) {
-            transform: rotate(0deg);
-        }   
-    }
 }
 
 .work-details {
-    width: 80%;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
@@ -112,6 +58,7 @@
     .project-desc {
         font-size: .875rem;
         line-height: 2.25rem;
+        text-align: left;
     }
     .project-name {
         font-size: 1.75rem;
@@ -121,9 +68,22 @@
         border: none;
     }
     @media (min-width: $nowDesktop) {
+        flex-flow: row wrap;
         width: auto;
         border: none;
         padding: 0;
         margin: 0 .5rem 6rem;
     }
 }//END OF WORK SECTION BLOCK
+
+#nba {
+    @include project-coloring(#600f69);
+}
+
+#bakesale {
+    @include project-coloring(#285943);
+}
+
+#vinyl {
+    @include project-coloring(black);
+}

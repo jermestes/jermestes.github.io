@@ -1,17 +1,19 @@
 //START OF ABOUT SECTION BLOCK
 #about {
-    min-height: calc(100vh - 7.5rem);
     .about-block {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         justify-content: center;
         align-items: center;
         margin-bottom: 4.5rem;
-        &:nth-child(2) {
-            flex-flow: row-reverse wrap;
-        }
         @media (min-width: $nowTablet) {
             margin-bottom: 5.75rem;
+        }
+        @media (min-width: $nowDesktop) {
+            flex-flow: row wrap;
+            &:nth-child(2) {
+                flex-flow: row-reverse wrap;
+            }
         }
         .about-block_text {
             font-family: 'Chakra Petch', sans-serif;
@@ -24,11 +26,11 @@
             }
         }
     }
-    img, .about-text {
+    img, .about-block_text {
         width: 90%;
         max-width: 24.75rem;
-        @media screen and (min-width: $nowTablet) {
-            padding: 0 1rem;
+        @media screen and (min-width: $nowDesktop) {
+            padding: 0 1.25rem;
         }
     }
 }//END OF ABOUT SECTION BLOCK

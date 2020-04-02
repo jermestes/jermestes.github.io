@@ -10,12 +10,6 @@
   font-family: "Roboto";
   src: url("../fonts/Roboto/Roboto-Regular.ttf") format(truetype);
 }
-@media screen and (min-width: 43.75rem) {
-  header, #about, #work, #contact {
-    padding: 1.5rem 0 3rem 0;
-  }
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -67,19 +61,38 @@ p {
 
 main section {
   padding: 1.5rem 5%;
+  text-align: center;
 }
-main h1 {
+@media (min-width: 62.5rem) {
+  main section {
+    padding: 1.5rem 0;
+    text-align: left;
+  }
+}
+main section .container {
+  text-align: left;
+}
+main h1:not(.headerh1) {
   background-color: #C8E8CC;
   display: inline-block;
   color: black;
+  font-size: 2.25rem;
+  margin: 0 0 1.5rem 0;
+  padding: 0 0.5rem;
+}
+@media (min-width: 43.75rem) {
+  main h1:not(.headerh1) {
+    font-size: 3rem;
+    margin: 0 0 1.5rem 1.25rem;
+  }
 }
 
 .app-wrap {
   display: flex;
-  flex-flow: column-reverse wrap;
+  flex-flow: column-reverse;
 }
 .app-wrap aside {
-  min-height: calc(100vh - 7.5rem);
+  background-color: #EEEEEE;
 }
 .app-wrap aside ul {
   display: flex;
@@ -89,18 +102,24 @@ main h1 {
 .app-wrap aside ul li {
   margin: 0.5rem 1rem;
 }
-@media (min-width: 56.25rem) {
+@media (min-width: 62.5rem) {
   .app-wrap {
     display: grid;
-    grid-template: auto/1fr 10fr 1fr;
+    grid-template: 100%/1fr 10fr 1fr;
     align-content: start;
     justify-items: center;
   }
   .app-wrap aside {
+    background-color: white;
+    height: calc(100% - 3rem);
     display: block;
     align-self: start;
     justify-self: end;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+  }
+  .app-wrap aside ul {
+    position: sticky;
+    top: 10.5rem;
   }
 }
 
@@ -118,12 +137,11 @@ nav {
 @media screen and (min-width: 43.75rem) {
   nav {
     width: auto;
-    top: auto;
     padding: 0;
     grid-template-rows: 3.75rem 3.75rem;
   }
 }
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
   nav {
     grid-template-columns: repeat(12, 1fr);
   }
@@ -181,7 +199,7 @@ nav .nav-links {
     line-height: inherit;
   }
 }
-@media (min-width: 56.25rem) {
+@media (min-width: 62.5rem) {
   nav .nav-links {
     display: grid;
     grid-column: 4/13;
@@ -242,7 +260,12 @@ header {
     position: static;
   }
 }
-@media screen and (orientation: portrait) and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
+  header .sub-sec {
+    margin: 0 1rem;
+  }
+}
+@media screen and (orientation: portrait) and (min-width: 62.5rem) {
   header {
     height: 100vh;
     flex-flow: column-reverse;
@@ -264,7 +287,7 @@ header {
     padding-top: 2.5rem;
   }
 }
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
   .header-waterfall {
     text-align: right;
     align-self: start;
@@ -343,30 +366,37 @@ header {
   font-size: 1.5rem;
   font-weight: 500;
 }
+@media screen and (min-width: 62.5rem) {
+  #intro-block {
+    padding: 1.5rem 0 3rem 0;
+  }
+}
 
-@media (min-width: 56.25rem) {
+@media (min-width: 62.5rem) {
   #intro-block {
     flex-flow: row wrap;
     align-content: flex-start;
     justify-content: center;
   }
 }
-#about {
-  min-height: calc(100vh - 7.5rem);
-}
 #about .about-block {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   margin-bottom: 4.5rem;
 }
-#about .about-block:nth-child(2) {
-  flex-flow: row-reverse wrap;
-}
 @media (min-width: 43.75rem) {
   #about .about-block {
     margin-bottom: 5.75rem;
+  }
+}
+@media (min-width: 62.5rem) {
+  #about .about-block {
+    flex-flow: row wrap;
+  }
+  #about .about-block:nth-child(2) {
+    flex-flow: row-reverse wrap;
   }
 }
 #about .about-block .about-block_text {
@@ -379,29 +409,25 @@ header {
 #about .about-block .about-block_text p {
   font-size: 1rem;
 }
-#about img, #about .about-text {
+#about img, #about .about-block_text {
   width: 90%;
   max-width: 24.75rem;
 }
-@media screen and (min-width: 43.75rem) {
-  #about img, #about .about-text {
-    padding: 0 1rem;
+@media screen and (min-width: 62.5rem) {
+  #about img, #about .about-block_text {
+    padding: 0 1.25rem;
   }
 }
 
 #work {
-  grid-column: 2/3;
-  width: 100%;
-  display: flex;
-  flex-flow: row-reverse wrap;
-  justify-content: center;
   color: #7b7879;
 }
 #work .work-img-container {
   width: 100%;
   max-width: 24.75rem;
+  text-align: center;
 }
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
   #work .work-img-container {
     width: 25rem;
   }
@@ -409,11 +435,12 @@ header {
 #work .work-img-container img {
   width: 100%;
 }
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
   #work .work-img-container img {
     width: auto;
     max-width: 100%;
     height: 16rem;
+    padding: 0 1.25rem;
   }
 }
 #work .work-btns {
@@ -423,6 +450,7 @@ header {
   justify-content: start;
 }
 #work button {
+  z-index: 999;
   text-align: center;
   cursor: pointer;
   width: auto;
@@ -439,66 +467,8 @@ header {
   background-color: #276A84;
   color: white;
 }
-@media screen and (min-width: 56.25rem) {
-  #work {
-    flex-flow: row-reverse wrap;
-  }
-}
-
-.work-toggle {
-  display: none;
-  position: sticky;
-  bottom: 0;
-  background-color: white;
-  width: 100%;
-  padding: 0.5rem 0;
-}
-.work-toggle p {
-  display: block;
-  padding: 0 2rem;
-  margin: auto 0;
-}
-@media screen and (min-width: 56.25rem) {
-  .work-toggle p {
-    display: flex;
-    padding: 1rem 0;
-  }
-}
-.work-toggle svg:first-child {
-  transform: rotate(-90deg);
-}
-.work-toggle svg:nth-child(3) {
-  transform: rotate(-90deg);
-}
-.work-toggle svg {
-  cursor: pointer;
-}
-@media screen and (min-width: 56.25rem) {
-  .work-toggle {
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    box-shadow: none;
-    padding: 0;
-    background-color: transparent;
-    flex-flow: column wrap;
-    border: none;
-    width: auto;
-    bottom: auto;
-    justify-content: center;
-    justify-self: start;
-    align-self: start;
-  }
-  .work-toggle svg:first-child {
-    transform: rotate(0deg);
-  }
-  .work-toggle svg:nth-child(3) {
-    transform: rotate(0deg);
-  }
-}
 
 .work-details {
-  width: 80%;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -509,6 +479,7 @@ header {
 .work-details .project-desc {
   font-size: 0.875rem;
   line-height: 2.25rem;
+  text-align: left;
 }
 .work-details .project-name {
   font-size: 1.75rem;
@@ -517,8 +488,9 @@ header {
 .work-details:last-child {
   border: none;
 }
-@media (min-width: 56.25rem) {
+@media (min-width: 62.5rem) {
   .work-details {
+    flex-flow: row wrap;
     width: auto;
     border: none;
     padding: 0;
@@ -526,11 +498,62 @@ header {
   }
 }
 
+#nba .project-desc .project-name {
+  color: #600f69;
+}
+#nba .project-desc button {
+  color: #600f69;
+  border-color: #600f69;
+}
+#nba .project-desc button:hover {
+  background-color: #600f69;
+  color: white;
+}
+
+#bakesale .project-desc .project-name {
+  color: #285943;
+}
+#bakesale .project-desc button {
+  color: #285943;
+  border-color: #285943;
+}
+#bakesale .project-desc button:hover {
+  background-color: #285943;
+  color: white;
+}
+
+#vinyl .project-desc .project-name {
+  color: black;
+}
+#vinyl .project-desc button {
+  color: black;
+  border-color: black;
+}
+#vinyl .project-desc button:hover {
+  background-color: black;
+  color: white;
+}
+
 #resume h2 {
   color: #276A84;
+  border-left: 0.5rem solid #276A84;
+  padding: 0.5rem;
+}
+#resume h3, #resume h4 {
+  color: #004953;
+}
+#resume .resume-sec-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-left: 1.25rem;
+}
+#resume .resume-sec {
+  text-align: left;
+  margin-bottom: 2rem;
 }
 #resume .job {
-  color: #7b7879;
+  color: black;
   margin-bottom: 2rem;
 }
 #resume .job-description {
@@ -560,7 +583,7 @@ header {
 #contact ul li a {
   text-decoration: none;
 }
-@media screen and (min-width: 56.25rem) {
+@media screen and (min-width: 62.5rem) {
   #contact ul {
     display: block;
     padding: 0 0.5rem 0 0;
@@ -587,20 +610,6 @@ footer {
   background-color: #EEEEEE;
   text-align: center;
   width: 100%;
-}
-
-.projects-container {
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-}
-@media (min-width: 56.25rem) {
-  .projects-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: start;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */

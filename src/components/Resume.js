@@ -1,20 +1,39 @@
 import React from 'react';
-import Pdf from '../assets/jeremyestes_resume.pdf';
-
-const Resume = () => {
+const Education = () => {
     return (
-        <main id="resume">
-            <div>
-                <h1>Resume</h1>
-                <a href={Pdf} className="nav-link resumeLink" target="_BLANK" rel="noopener noreferrer" >PDF</a>
-            </div>          
+        <section className="education resume-sec">
+            <h2>Education</h2>
+            <h3>Drexel University (Philadelphia, PA)</h3>
+            <h4>Bachelor's of Science in Information Technology</h4>
+            <ul>
+                <li><strong>Minor:</strong> Interactive Digital Media</li>
+                <li><strong>Honors:</strong> Recipient of the Liberty Scholars Scholarship (2014-2019)</li>
+                <li><strong>GPA:</strong> 3.10</li>
+            </ul>
+        </section>
+    );
+}
 
-            <section className="experience">
+const Skills = () => {
+    return (
+        <section className="skills resume-sec">
+            <h2>Skills/Tools</h2>
+            <h3>Development</h3>
+            <p>HTML, CSS, SASS, JavaScript, ReactJS, PHP, MySQL/MariaDB, Drupal</p>
+            <h3>Design</h3>
+            <p>UI/UX Design, Adobe XD, Figma, Adobe Photoshop and Illustrator</p>
+        </section>
+    )
+}
+
+const Experience = () => {
+    return(
+    <div className="experience resume-sec">
                 <h2>Professional Experience</h2>
                 <div className="job">
                     <div>
-                        <h3>Web Support Developer at Eastern Standard</h3>
-                        <h4>Jan 2020 - Present</h4>
+                        <h3>Web Support Developer</h3>
+                        <h4>Eastern Standard (Jan 2020 - Present)</h4>
                     </div>
                 <ul className="job-description">
                         <li>Troubleshooting, debugging, testing and applying fixes to existing code, front- and back-end</li>
@@ -25,8 +44,8 @@ const Resume = () => {
                 
                 <div className="job">
                     <div>
-                        <h3>Technical Support Specialist at Drexel University IT</h3>
-                        <h4>March 2017 - Sep 2018</h4>
+                        <h3>Technical Support Specialist</h3>
+                        <h4>Drexel University IT (Mar 2017 - Sep 2018)</h4>
                     </div>
                     <ul className="job-description">
                         <li>Provided first and second level support over the phone to a student body of over 24,000 students and 2,000 faculty</li>
@@ -37,8 +56,8 @@ const Resume = () => {
                 
                 <div className="job">
                     <div>
-                        <h3>Helpdesk Support Co-op at Annenberg School for Communication (UPenn)</h3>
-                        <h4>March - September 2016</h4>
+                        <h3>Helpdesk Support Co-op</h3>
+                        <h4>Annenberg School for Communication - UPenn (Mar - Sep 2016)</h4>
                     </div>
                     <ul className="job-description">
                         <li>Troubleshot software and hardware issues for faculty, staff, and students both in-person and overthephone.</li>
@@ -46,11 +65,22 @@ const Resume = () => {
                         <li>Maintained classroom and office technology</li>
                     </ul>
                 </div>
-            </section>
-            <section className="education">
-                <h2>Education</h2>
-            </section>
-        </main>
+            </div>
+    );
+}
+
+const Resume = () => {
+    return (
+        <section id="resume">
+            <div>
+                <h1>Resume</h1>
+            </div>
+            <div className="resume-sec-container">
+                <Education />
+                <Skills />     
+                <Experience />  
+            </div>
+        </section>
     );
 };
 

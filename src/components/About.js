@@ -26,10 +26,10 @@ const About = () => {
     return (
         <section className="react-transition swipe-up">
             <h1>About Me</h1>
-            <div id="about">
+            <div id="about" className="container">
                 {aboutList.map(block => {
                     return(
-                        <AboutBlock image={block.image} opener={block.opener} body={block.body} />
+                        <AboutBlock key={block.opener} image={block.image} opener={block.opener} body={block.body} />
                     )
                 })}
             </div> 

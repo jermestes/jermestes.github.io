@@ -14,7 +14,6 @@ nav {
     //from tablet to desktop
     @media screen and (min-width: $nowTablet) {
         width: auto;
-        top: auto;
         padding: 0;
         grid-template-rows: 3.75rem 3.75rem;
         //grid-template-columns: .5fr repeat(10,1fr) .5fr;

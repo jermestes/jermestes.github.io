@@ -1,9 +1,24 @@
 #resume {
     h2 {
         color: $blue;
+        border-left: .5rem solid $blue;
+        padding: .5rem;
+    }
+    h3, h4 {
+        color: $midnight-green;
+    }
+    .resume-sec-container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding-left: 1.25rem;
+    }
+    .resume-sec {
+        text-align: left;
+        margin-bottom: 2rem;
     }
     .job {
-        color: $darkgrey;
+        color: black;
         margin-bottom: 2rem; 
     }
     .job-description {

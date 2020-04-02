@@ -6,12 +6,28 @@ $gold:#ccb37a;
 $green: #C8E8CC;
 $midnight-green: #004953;
 $nowTablet: 43.75rem; //700px
-$nowDesktop: 56.25rem; //900px
+$nowDesktop: 62.5rem; //1000px
 $nowLargeDesktop: 85.375rem; //1440px
 $nowTV: 120rem; //1920px
 
 @mixin main-sec-spacing {
-    @media screen and (min-width: $nowTablet) {
+    @media screen and (min-width: $nowDesktop) {
         padding: 1.5rem 0 3rem 0;
     }    
+}
+
+@mixin project-coloring($color) {
+    .project-desc {
+        .project-name {
+            color: $color;
+        }
+        button {
+            color: $color;
+            border-color: $color;
+            &:hover {
+                background-color: $color;
+                color: white;
+            } 
+        }
+    }
 }

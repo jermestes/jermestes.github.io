@@ -12,7 +12,8 @@ const projectList = [
         imgSrc: IDM364, 
         link1: 'https://bakesale.jermestes.com',
         link2: 'https://github.com/jermestes/idm364-jje56',
-        linkTypes: ['Live Site','Repository']
+        linkTypes: ['Live Site','Repository'],
+        id: 'bakesale'
     } ,
     { 
         name: 'NBA Zodiac',
@@ -20,7 +21,8 @@ const projectList = [
         imgSrc: IDM231,
         link1: 'https://jermestes.com/idm231',
         link2: 'https://github.com/jermestes/idm231-jje56',
-        linkTypes: ['Live Site','Repository']
+        linkTypes: ['Live Site','Repository'],
+        id: 'nba'
     } ,
     {
         name: 'iTunes Redesign',
@@ -28,7 +30,8 @@ const projectList = [
         imgSrc: IDM211,
         link1: 'https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off',
         link2: null,
-        linkTypes: ['Live Demo',null]
+        linkTypes: ['Live Demo',null],
+        id: 'itunes'
     } ,
     {
         name: 'VinylDNS',
@@ -36,7 +39,8 @@ const projectList = [
         imgSrc: Vinyl,
         link1: 'http://www.cci.drexel.edu/SeniorDesign/2018_2019/VinylDNS/index.html',
         link2: null,
-        linkTypes: ['More Info',null]
+        linkTypes: ['More Info',null],
+        id: 'vinyl'
     }  
 ];
 
@@ -45,12 +49,12 @@ const Projects = () => {
         <div className="projects-container">
             {projectList.map(project => {
                 return(
-                    <div class="work-details">
+                    <div key={project.id} className="work-details" id={project.id}>
                         <div className="work-img-container"> 
                             <img className="sub-sec" src={project.imgSrc} alt={`${project.name} project`}></img>
                         </div>
                         
-                        <div className="sub-sec" id="project-desc">
+                        <div className="sub-sec project-desc">
                             <h2 className="project-name">{project.name}</h2>
                             <p className="project-desc">{project.desc}</p>
                             <div className="work-btns">

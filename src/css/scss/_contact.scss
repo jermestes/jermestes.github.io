@@ -46,15 +46,3 @@ footer {
     text-align: center;
     width: 100%;
 }
-
-.projects-container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: center;
-    @media (min-width: $nowDesktop) {
-        display: flex;
-        justify-content: space-around;
-        align-items: start;
-    }
-}
