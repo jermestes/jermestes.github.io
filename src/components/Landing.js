@@ -6,7 +6,8 @@ import Resume from './Resume';
 import LinkList from './Contact';
 import Intro from './Intro';
 
-const Landing = () => {
+const Landing = (props) => {
+    let aboutSwipe = props.swipe;
     return (
         <div className="app-wrap">
             <aside>
@@ -16,7 +17,7 @@ const Landing = () => {
             <main>
                 <Switch>
                     <Route path="/" exact component={Intro}/>
-                    <Route path="/about" component={About} />
+                    <Route path="/about" swipe={props.swipe} render={(props) => <About swipe={aboutSwipe} />} />
                     <Route path="/work" component={Work} />
                     <Route path="/resume" component={Resume} />
                 </Switch>

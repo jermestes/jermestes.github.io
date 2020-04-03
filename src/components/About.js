@@ -22,9 +22,17 @@ let aboutList = [
     }
 ];
 
-const About = () => {
+
+const About = (props) => {
+    let swipe;
+    console.log(props.swipe);
+    if(props.swipe == true) {
+        swipe = "swipe-up";
+    } else {
+        swipe = " asfdg";
+    }
     return (
-        <section className="react-transition swipe-up">
+        <section className={`react-transition about` + swipe}>
             <h1>About Me</h1>
             <div id="about" className="container">
                 {aboutList.map(block => {

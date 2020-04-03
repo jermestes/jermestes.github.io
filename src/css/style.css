@@ -123,6 +123,10 @@ main h1:not(.headerh1) {
   }
 }
 
+footer.hidden {
+  visibility: hidden;
+}
+
 nav {
   display: grid;
   grid-template-rows: 2.65rem 2.65rem;

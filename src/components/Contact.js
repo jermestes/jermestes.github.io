@@ -3,7 +3,7 @@ import React from 'react';
 //CONTACT PAGE profilelink list (links to my other professional profiles)
 const LinkList = () => {
     const profiles = [
-        {name: 'gmail', url: "mailto:estesjeremy96@gmail.com", imgType: 'webp'},
+        {name: 'gmail', url: "mailto:estesjeremy96@gmail.com", imgType: 'png'},
         {name: 'github', url: "https://github.com/jermestes", imgType: 'png'},
         {name: 'linkedin', url: "https://www.linkedin.com/in/jeremy-estes/", imgType: 'png'}
     ];
