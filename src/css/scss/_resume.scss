@@ -1,21 +1,33 @@
 #resume {
+    h1 {
+        background-color: #E1CA96;
+    }
     h2 {
         color: $blue;
-        border-left: .5rem solid $blue;
-        padding: .5rem;
     }
     h3, h4 {
         color: $midnight-green;
     }
+    p {
+        color: black;
+    }
     .resume-sec-container {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: center;
+        @media (min-width: $nowDesktop) {
+            justify-content: space-between;
+        }
         padding-left: 1.25rem;
     }
     .resume-sec {
         text-align: left;
-        margin-bottom: 2rem;
+        margin: 0 0 4rem 0;
+        padding: .5rem;
+        border: 2px solid $midnight-green;
+        @media (min-width: $nowDesktop) {
+            margin-right: .5rem;
+        }
     }
     .job {
         color: black;
@@ -25,5 +37,8 @@
         padding-left: .5rem;
         margin-left: 1.25rem;
         list-style-type: disc;
+    }
+    .experience {
+        width: 100%;
     }
 }

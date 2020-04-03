@@ -73,7 +73,7 @@ main section .container {
   text-align: left;
 }
 main h1:not(.headerh1) {
-  background-color: #C8E8CC;
+  background-color: #8CE3FD;
   display: inline-block;
   color: black;
   font-size: 2.25rem;
@@ -318,7 +318,11 @@ header {
 
 .header-chevron {
   animation: bounce 600ms ease-in-out 600ms infinite alternate;
-  -webkit-animation: bounce 600ms ease-in-out 600ms infinite alternate;
+  -webkit-animation-name: bounce;
+  -webkit-animation-duration: 600ms;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
   background-color: transparent;
   border: none;
   padding-top: 0.5rem;
@@ -421,6 +425,9 @@ header {
 
 #work {
   color: #7b7879;
+}
+#work h1 {
+  background-color: #C8E8CC;
 }
 #work .work-img-container {
   width: 100%;
@@ -534,23 +541,39 @@ header {
   color: white;
 }
 
+#resume h1 {
+  background-color: #E1CA96;
+}
 #resume h2 {
   color: #276A84;
-  border-left: 0.5rem solid #276A84;
-  padding: 0.5rem;
 }
 #resume h3, #resume h4 {
   color: #004953;
 }
+#resume p {
+  color: black;
+}
 #resume .resume-sec-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
+  justify-content: center;
   padding-left: 1.25rem;
+}
+@media (min-width: 62.5rem) {
+  #resume .resume-sec-container {
+    justify-content: space-between;
+  }
 }
 #resume .resume-sec {
   text-align: left;
-  margin-bottom: 2rem;
+  margin: 0 0 4rem 0;
+  padding: 0.5rem;
+  border: 2px solid #004953;
+}
+@media (min-width: 62.5rem) {
+  #resume .resume-sec {
+    margin-right: 0.5rem;
+  }
 }
 #resume .job {
   color: black;
@@ -560,6 +583,9 @@ header {
   padding-left: 0.5rem;
   margin-left: 1.25rem;
   list-style-type: disc;
+}
+#resume .experience {
+  width: 100%;
 }
 
 #contact {

@@ -79,7 +79,12 @@ header {
 
 .header-chevron {
     animation: bounce 600ms ease-in-out 600ms infinite alternate;
-    -webkit-animation: bounce 600ms ease-in-out 600ms infinite alternate;
+    //-webkit-animation: bounce 600ms ease-in-out 600ms infinite alternate;
+    -webkit-animation-name: bounce;
+    -webkit-animation-duration: 600ms;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
     background-color: transparent;
     border: none;
     padding-top: .5rem;
