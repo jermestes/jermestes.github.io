@@ -30,8 +30,8 @@ class App extends Component {
         return (
             <Router>
                 <Nav action={this.pageReset}/>
-                <Landing className="transition-container" swipe={this.state.swipeup}/>
-                <footer className="footer">© 2019 Jeremy Estes</footer>
+                <Landing className="transition-container" action={this.pageReset} swipe={this.state.swipeup}/>
+                <footer className="footer">© 2020 Jeremy Estes</footer>
             </Router>
         );
     }

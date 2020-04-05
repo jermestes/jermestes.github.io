@@ -3,14 +3,14 @@ import Hero from '../assets/hero.jpg';
 import Hero_wide from '../assets/hero-wide.jpg';
 import {Link} from 'react-router-dom';
 
-const Intro = () => {
+const Intro = (props) => {
   return (
     <header id="intro-block" className="react-transition fade-in">
         <div className="sub-sec header-waterfall">
             <h1 className="headerh1">Jerm Estes</h1>
             <h2 className="waterfallh2">Web developer<br />Designer<br />Creator</h2>
             <Link to="/about">
-                <button className="header-chevron"><span></span></button>
+                <button onClick={props.action} className="header-chevron"><span></span></button>
             </Link>
         </div>
 
