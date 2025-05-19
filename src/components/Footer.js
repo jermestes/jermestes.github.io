@@ -7,7 +7,7 @@ const Footer = () => {
                 
             </div>
             <div className="footer-bottom-half">
-                <p>© 2020 Jeremy Estes</p>            
+                <p>© 2025 Jeremy Estes</p>            
             </div>               
         </footer>
     );

@@ -1,11 +1,12 @@
 {
   "name": "idm222-jje56",
   "version": "0.1.0",
+  "homepage": "https://jermestes.github.io/",
   "private": true,
   "dependencies": {
     "components": "^0.1.0",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
     "sass": "^1.26.3"

@@ -9,9 +9,9 @@ const Intro = (props) => {
         <div className="sub-sec header-waterfall">
             <h1 className="headerh1">Jerm Estes</h1>
             <h2 className="waterfallh2">Web developer<br />Designer<br />Creator</h2>
-            <Link to="/about">
+            {/*<Link to="/about">
                 <button onClick={props.action} className="header-chevron"><span></span></button>
-            </Link>
+            </Link>*/}
         </div>
 
         <picture className="sub-sec header-picture">
