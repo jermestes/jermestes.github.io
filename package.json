@@ -1,0 +1,43 @@
+{
+  "name": "idm222-jje56",
+  "version": "0.1.0",
+  "homepage": "https://jermestes.github.io/",
+  "private": true,
+  "dependencies": {
+    "components": "^0.1.0",
+    "gh-pages": "^6.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "sass": "^1.26.3"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start BROWSER='Firefox' ",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "typescript": "^3.6.3",
+    "typescript-styled-plugin": "^0.14.0"
+  }
+}
