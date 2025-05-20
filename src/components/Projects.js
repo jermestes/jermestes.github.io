@@ -10,7 +10,7 @@ const projectList = [
         name: 'The BAKEd Sale',
         desc: 'A ReactJS webapp for a fictitious food ordering service. Users can place/edit orders as a customer and make changes to menu items as an admin. Changes in menu data are reflected in realtime via Firebase.', 
         imgSrc: IDM364, 
-        link1: 'https://bakesale.jermestes.com',
+        link1: 'https://jermestes.github.io/idm364-jje56',
         link2: 'https://github.com/jermestes/idm364-jje56',
         linkTypes: ['Live Site','Repository'],
         id: 'bakesale'
@@ -19,7 +19,7 @@ const projectList = [
         name: 'NBA Zodiac',
         desc: 'A web page that serves users a unique NBA player, message, and sound based on the sign chosen or birthdate entered. Coded in HTML, CSS, and Vanilla JS. Images edited in Adobe Photoshop.', 
         imgSrc: IDM231,
-        link1: 'https://jermestes.com/idm231',
+        link1: 'https://jermestes.github.io/idm231',
         link2: 'https://github.com/jermestes/idm231-jje56',
         linkTypes: ['Live Site','Repository'],
         id: 'nba'
