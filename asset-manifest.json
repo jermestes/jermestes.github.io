@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.089ffaf8.chunk.css",
-    "main.js": "/static/js/main.b0a1cd65.chunk.js",
-    "main.js.map": "/static/js/main.b0a1cd65.chunk.js.map",
+    "main.js": "/static/js/main.d42349b3.chunk.js",
+    "main.js.map": "/static/js/main.d42349b3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.513a0e3a.js",
     "runtime-main.js.map": "/static/js/runtime-main.513a0e3a.js.map",
     "static/js/2.c3bc6eaf.chunk.js": "/static/js/2.c3bc6eaf.chunk.js",
     "static/js/2.c3bc6eaf.chunk.js.map": "/static/js/2.c3bc6eaf.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.198d96852626c16e98ba266deb09ad33.js": "/precache-manifest.198d96852626c16e98ba266deb09ad33.js",
+    "precache-manifest.fc6420ee80d3ba3e9a9c47c627cb44f2.js": "/precache-manifest.fc6420ee80d3ba3e9a9c47c627cb44f2.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.089ffaf8.chunk.css.map": "/static/css/main.089ffaf8.chunk.css.map",
     "static/media/BMoviePoster-cropped.jpg": "/static/media/BMoviePoster-cropped.880f5c5b.jpg",
@@ -45,6 +45,6 @@
     "static/js/runtime-main.513a0e3a.js",
     "static/js/2.c3bc6eaf.chunk.js",
     "static/css/main.089ffaf8.chunk.css",
-    "static/js/main.b0a1cd65.chunk.js"
+    "static/js/main.d42349b3.chunk.js"
   ]
 }
