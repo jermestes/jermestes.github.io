@@ -17,16 +17,16 @@ const projectList = [
     } ,
     { 
         name: 'NBA Zodiac',
-        desc: 'A web page that serves users a unique NBA player, message, and sound based on the sign chosen or birthdate entered. Coded in HTML, CSS, and Vanilla JS. Images edited in Adobe Photoshop.', 
+        desc: 'A web page that serves users a unique NBA player and message based on the sign chosen or birthdate entered. Coded in React with Tailwind CSS. Images edited in Adobe Photoshop.', 
         imgSrc: IDM231,
-        link1: 'https://jermestes.github.io/idm231',
+        link1: 'https://jermestes.github.io/idm231-jje56/',
         link2: 'https://github.com/jermestes/idm231-jje56',
         linkTypes: ['Live Site','Repository'],
         id: 'nba'
     } ,
     {
         name: 'iTunes Redesign',
-        desc: `The term project for my UI Design course was to make a prototype which redesigns the UI of an existing desktop site or application. I took a different approach, by reimagining Apple iTunes as a browser player that creates parity with Apple Music's iPhone app. Created and deployed with AdobeXD.`,
+        desc: `The term project for my UI Design course was to make a prototype which redesigns the UI of an existing desktop site or application. I took a different approach, by reimagining Apple iTunes as a browser player that creates parity with Apple Music's iPhone app. Created and deployed with AdobeXD. PLEASE NOTE that this was done before the Apple Music app existed on desktop`,
         imgSrc: IDM211,
         link1: 'https://xd.adobe.com/view/d9e6064d-f5ff-4585-6456-15c6a99b3c27-afd7/?hints=off',
         link2: null,
