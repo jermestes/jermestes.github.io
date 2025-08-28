@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@theme {
+  --color-darkblue: #2A3245;
+  --color-pink: #F9B2B2;
+  --color-altblue: #165B74;
+  --font-display: 'Gemunu Libre', sans-serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+.gradient-left {
+  background: radial-gradient(50% 50% at 50% 50%, #2A3245 26%, #FFFFFF 100%);
+  border-radius: 50%;
+  height: 88%;
+  width: 50%;
+}
