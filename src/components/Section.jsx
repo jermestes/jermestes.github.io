@@ -1,10 +1,8 @@
-import { Children } from "react";
-
 function Section({heading, body, children}) {
-    const paraClasses = "text-sm sm:text-2xl";
+    const paraClasses = "text-sm m2t:text-lg t2d:text-2xl mb-2.5";
     return (
-        <section className="mb-20 sm:mb-30">
-            <h2 className="font-display text-2xl sm:text-5xl mb-1.5 sm:mb-5">{heading}</h2>
+        <section className="mb-20 m2t:mb-30">
+            <h2 className="font-display text-2xl m2t:text-3xl t2d:text-5xl mb-3 m2t:mb-5">{heading}</h2>
             {Array.isArray(body) ? (
                 body.map((paragraph, i) => <p key={i} className={paraClasses}>{paragraph}</p>)
             ) : (
