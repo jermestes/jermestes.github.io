@@ -4,7 +4,7 @@ function Hero() {
     <div className="grid-rows-1 grid-cols-1 w-full my-12 m2t:mb-20 t2d:mb-28">
         <div className="bg-[url(/hero-gradients.svg)] bg-[length:100%_100%] m2t:w-58/100 m-auto">
             <img src="/portfolio-hero_inverted2-transparent-subject-crop.png"
-            className="w-58/100 justify-self-center"
+            className="w-58/100 m-auto"
             alt="Me seated in a computer chair, dribbling a basketball with my left hand while typing on a laptop with my right hand." />
         </div>
         
